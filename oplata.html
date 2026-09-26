@@ -5,42 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Купить — aibolno.ru</title>
 <meta name="description" content="50 000 ₽, один раз. Доступ к закрытому репозиторию на твой логин GitHub, инструкция в PDF, обновления 1.x в течение года.">
-<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#15140f">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="top">
+<header class="top top--ondark">
   <div class="wrap">
     <a class="wordmark" href="/"><b>ai</b>bolno.ru</a>
     <nav>
       <a href="metod.html">Метод</a>
       <a href="sostav.html">Что входит</a>
-      <a href="oplata.html" aria-current="page">Купить</a>
+      <a href="sostav.html#usloviya">Условия</a>
     </nav>
+    <a class="btn btn--accent" href="oplata.html" aria-current="page">Купить</a>
   </div>
 </header>
 
 <main>
 
-<div class="hero page-title">
+<section class="hero hero--page">
   <div class="wrap">
-    <p class="kicker">Один платёж, без подписки</p>
+    <p class="eyebrow">Один платёж, без подписки</p>
     <h1>50 000 ₽, один раз</h1>
     <p class="lead">После оплаты: доступ к закрытому репозиторию на твой логин GitHub, инструкция в PDF, обновления 1.x в течение года.</p>
+    <div class="btns">
+      <a class="btn btn--accent" href="ЗАМЕНИТЬ-КОНТАКТОМ">Написать и получить счёт</a>
+      <a class="btn btn--ghost" href="sostav.html">Посмотреть состав целиком</a>
+    </div>
   </div>
-</div>
+</section>
 
 <section>
   <div class="wrap">
     <h2>Что происходит дальше</h2>
-    <p>Разворачивание занимает вечер. Открываешь папку в Claude&nbsp;Code, пишешь одну строку — дальше помощник проверяет машину, задаёт вопросы и всё собирает сам.</p>
-    <p class="req" style="margin-top:22px">Пока мы принимаем оплату вручную: напиши, и мы выставим счёт.</p>
+    <p class="prose" style="margin-top:20px">Разворачивание занимает вечер. Открываешь папку в Claude&nbsp;Code, пишешь одну строку — дальше помощник проверяет машину, задаёт вопросы и всё собирает сам.</p>
+
+    <div class="req-box" style="margin-top:30px">
+      <p class="req">Пока мы принимаем оплату вручную: напиши, и мы выставим счёт.</p>
+    </div>
     <div class="btns">
       <a class="btn btn--accent" href="ЗАМЕНИТЬ-КОНТАКТОМ">Написать и получить счёт</a>
     </div>
@@ -48,14 +55,14 @@
   </div>
 </section>
 
-<section>
+<section class="band-soft">
   <div class="wrap">
     <h2>Что нужно иметь до начала</h2>
-    <p class="req">Mac, который не выключается. Claude&nbsp;Code. Оплаченный доступ к модели с запасом на месяц. GitHub. Telegram. Всё.</p>
-    <p style="margin-top:22px">Живые контуры расходуют платный доступ к моделям постоянно, даже когда ты ими не пользуешься. Это отдельный расход, и он на тебе. Неиспользуемые контуры надо гасить.</p>
-    <div class="btns">
-      <a class="btn" href="sostav.html">Посмотреть состав целиком</a>
+    <div class="req-box">
+      <p class="req">Mac, который не выключается. Claude&nbsp;Code. Оплаченный доступ к модели с запасом на месяц. GitHub. Telegram. Всё.</p>
     </div>
+    <p class="prose" style="margin-top:26px">Живые контуры расходуют платный доступ к моделям постоянно, даже когда ты ими не пользуешься. Это отдельный расход, и он на тебе. Неиспользуемые контуры надо гасить.</p>
+    <div class="todo">ВОПРОС К АВТОРУ ТЗ, ТЕКСТ НЕ ТРОГАЛ: то же слово «Всё», что и на главной, — список требований неполон (нет <code>gh</code>, <code>tmux</code>, <code>bun</code>, <code>python3</code>).</div>
   </div>
 </section>
 

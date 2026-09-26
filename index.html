@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>aibolno.ru — команда ИИ-агентов вместо одного чата</title>
 <meta name="description" content="Айбольно (aibolno) — метод и готовая машина из нескольких рабочих контуров: у каждого свой репозиторий, свои правила, свои роли и свой бот в Telegram. Задачу ставишь с телефона, работа приходит вместе с доказательством.">
-<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#15140f">
 <meta property="og:title" content="Больно — это когда всё на тебе">
 <meta property="og:description" content="Не займёшься этим сейчас — займёшься потом и дороже. Несколько рабочих контуров вместо одного чата с нейросетью.">
 <meta property="og:type" content="website">
@@ -14,45 +13,56 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="top">
+<header class="top top--ondark">
   <div class="wrap">
     <a class="wordmark" href="/"><b>ai</b>bolno.ru</a>
     <nav>
       <a href="metod.html">Метод</a>
       <a href="sostav.html">Что входит</a>
-      <a href="oplata.html">Купить</a>
+      <a href="sostav.html#usloviya">Условия</a>
     </nav>
+    <a class="btn btn--accent" href="oplata.html">Купить</a>
   </div>
 </header>
 
 <main>
 
-<div class="hero">
+<section class="hero">
   <div class="wrap">
-    <p class="kicker">Не займёшься этим сейчас — займёшься потом и дороже.</p>
+    <p class="eyebrow">Не займёшься этим сейчас — займёшься потом и дороже.</p>
     <h1>Больно — это когда всё на тебе.</h1>
     <p class="lead">Один чат с нейросетью забывает, о чём вы договорились, упирается в конец контекста и стоит, пока ты спишь. Здесь другое устройство: несколько рабочих контуров, у каждого свой репозиторий, свои правила, свои роли и свой бот в Telegram. Задачу ставишь с телефона. Работа приходит обратно вместе с доказательством, что она сделана.</p>
+    <div class="btns">
+      <a class="btn btn--accent" href="oplata.html">Купить за 50 000 ₽</a>
+      <a class="btn btn--ghost" href="metod.html">Сначала забрать метод бесплатно</a>
+    </div>
+    <p class="hero-facts">
+      <span><b>4</b> контура из коробки</span>
+      <span><b>одна</b> команда на разворачивание</span>
+      <span><b>44</b> страницы инструкции</span>
+      <span><b>один</b> платёж, без подписки</span>
+    </p>
   </div>
-</div>
+</section>
 
 <section id="bolit">
   <div class="wrap">
     <h2>Где болит</h2>
-    <ul class="dashed">
-      <li>Объясняешь одно и то же по третьему разу, потому что чат не помнит вчерашнего.</li>
-      <li>Контекст кончился на середине работы, и всё началось сначала.</li>
-      <li>«Готово» сказано уверенно, а проверить нечем.</li>
-      <li>Всё стоит ровно до того момента, когда ты сядешь за клавиатуру.</li>
-    </ul>
+    <div class="grid">
+      <article class="card"><span class="num">01</span><p>Объясняешь одно и то же по третьему разу, потому что чат не помнит вчерашнего.</p></article>
+      <article class="card"><span class="num">02</span><p>Контекст кончился на середине работы, и всё началось сначала.</p></article>
+      <article class="card"><span class="num">03</span><p>«Готово» сказано уверенно, а проверить нечем.</p></article>
+      <article class="card"><span class="num">04</span><p>Всё стоит ровно до того момента, когда ты сядешь за клавиатуру.</p></article>
+    </div>
   </div>
 </section>
 
-<section id="poluchaesh">
+<section id="poluchaesh" class="band-soft">
   <div class="wrap">
     <h2>Что получаешь</h2>
     <div class="tiers">
@@ -65,6 +75,7 @@
       </article>
 
       <article class="tier tier--paid">
+        <p class="badge">всё целиком</p>
         <p class="price">50 000 ₽</p>
         <h3>Машина</h3>
         <p>Репозиторий целиком. Генератор, который разворачивает проект одной командой: контуры, роли с проставленными моделями, файл правил, процесс приёмки, боты в Telegram, сторожа, автозапуск, команды владельца прямо из чата. Плюс инструкция на 44 страницы о том, как этим пользоваться и обо что бьются.</p>
@@ -79,30 +90,42 @@
   <div class="wrap">
     <h2>Как это выглядит</h2>
     <figure>
-      <div class="shot shot--todo">СЮДА — настоящий снимок экрана: постановка задачи в Telegram и ответ с доказательством. Нарисованный макет не подходит. Файл: assets/telegram-zadacha.png</div>
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>Telegram</span></div>
+        <div class="shot--todo">СЮДА — настоящий снимок экрана: постановка задачи в Telegram и ответ с доказательством. Нарисованный макет не подходит. Файл: assets/telegram-zadacha.png</div>
+      </div>
       <figcaption>Это не макет. Так выглядит рабочий день.</figcaption>
     </figure>
   </div>
 </section>
 
-<section id="nuzhno-imet">
+<section id="nuzhno-imet" class="band-soft">
   <div class="wrap">
     <h2>Что нужно иметь</h2>
-    <p class="req">Mac, который не выключается. Claude&nbsp;Code. Оплаченный доступ к модели с запасом на месяц. GitHub. Telegram. Всё.</p>
+    <div class="req-box">
+      <p class="req">Mac, который не выключается. Claude&nbsp;Code. Оплаченный доступ к модели с запасом на месяц. GitHub. Telegram. Всё.</p>
+    </div>
     <div class="todo">ВОПРОС К АВТОРУ ТЗ, ТЕКСТ НЕ ТРОГАЛ: слово «Всё» обещает полноту списка, которой в README шаблона нет. Там обязательными названы ещё <code>gh</code> (авторизованный), <code>tmux</code>, <code>bun</code>, <code>python3</code> — их проверяет сам README одной строкой. Покупатель упрётся в это на первом шаге. Та же строка стоит на странице оплаты.</div>
   </div>
 </section>
 
-<section id="ne-delaet">
+<section id="ne-delaet" class="band-dark">
   <div class="wrap">
     <h2>Чего это не делает</h2>
-    <ul class="dashed">
-      <li><b>Не создаёт ботов в Telegram.</b> Ограничение платформы, обойти нельзя.</li>
-      <li><b>Не решает, что строить.</b> Контур, которому не сказали, куда идти, будет исправно и дёшево идти не туда.</li>
-      <li><b>Не работает без твоей подписи.</b> Подписываешь задания не читая — процесс превращается в декорацию с дополнительными шагами.</li>
-      <li><b>Не бывает бесплатным.</b> Живые контуры расходуют бюджет постоянно, даже когда ты ими не пользуешься. Неиспользуемые надо гасить.</li>
-      <li><b>Не настраивается один раз навсегда.</b> Инструменты обновляются и иногда ломают то, что работало. Сторожа существуют именно поэтому.</li>
-    </ul>
+    <div class="grid">
+      <article class="card"><p><b>Не создаёт ботов в Telegram.</b> Ограничение платформы, обойти нельзя.</p></article>
+      <article class="card"><p><b>Не решает, что строить.</b> Контур, которому не сказали, куда идти, будет исправно и дёшево идти не туда.</p></article>
+      <article class="card"><p><b>Не работает без твоей подписи.</b> Подписываешь задания не читая — процесс превращается в декорацию с дополнительными шагами.</p></article>
+      <article class="card"><p><b>Не бывает бесплатным.</b> Живые контуры расходуют бюджет постоянно, даже когда ты ими не пользуешься. Неиспользуемые надо гасить.</p></article>
+      <article class="card card--full"><p><b>Не настраивается один раз навсегда.</b> Инструменты обновляются и иногда ломают то, что работало. Сторожа существуют именно поэтому.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light">50 000 ₽, один раз</p>
+    <h2>Больно — это когда всё на тебе.</h2>
     <div class="btns">
       <a class="btn btn--accent" href="oplata.html">Купить за 50 000 ₽</a>
       <a class="btn" href="metod.html">Сначала забрать метод бесплатно</a>
