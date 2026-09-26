@@ -532,6 +532,22 @@ figcaption {
   margin: 0;
 }
 
+.req--note {
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+.req code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  color: var(--accent);
+}
+
 .band-dark .req-box {
   background: var(--dark-2);
   border-color: var(--dark-rule);
