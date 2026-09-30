@@ -1049,3 +1049,120 @@ footer a:hover { color: var(--accent-bright); }
 
 .mockcard { margin: 0; min-width: 0; }
 .mockcard--wide .mock { max-width: 100%; }
+
+/* ——— схемы внутри карточек «Что входит» ———
+   .part стоит на --surface, и рама схемы на том же токене (в тёмной теме они
+   вообще один цвет) слилась бы с карточкой. Поэтому здесь рама берёт --paper. */
+
+.part .mock {
+  background: var(--paper);
+  box-shadow: none;
+  max-width: 100%;
+}
+
+.part .mock__bar { background: var(--surface); }
+.part .mock--dark { background: var(--dark); }
+.part .mock--dark .mock__bar { background: var(--dark-2); }
+.part figcaption { text-align: left; font-size: 0.9em; margin-top: 14px; }
+
+/* изоляция контуров: строка на контур, у каждой свои три вещи */
+
+.iso { padding: 14px 14px 16px; display: grid; gap: 9px; }
+
+.iso__row {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.iso__row b { font-size: 0.86rem; }
+
+.iso__row span {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.7;
+  color: var(--ink-3);
+  overflow-wrap: anywhere;
+}
+
+.iso__note {
+  margin: 4px 2px 0;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.6;
+  color: var(--accent);
+}
+
+/* роли с проставленными моделями */
+
+.roles { padding: 14px 14px 16px; display: grid; gap: 1px; background: var(--rule); border-radius: 0; }
+
+.roles > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  background: var(--paper);
+}
+
+.roles > div:first-child { border-radius: 8px 8px 0 0; }
+.roles > div:last-child { border-radius: 0 0 8px 8px; }
+.roles b { font-size: 0.85rem; font-weight: 500; }
+
+.roles i {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  color: var(--ink-3);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+
+.roles i.is-strong { color: var(--accent); background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
+
+.roles--empty { color: var(--ink-3); font-family: var(--serif); font-size: 0.92rem; line-height: 1.55; padding: 14px; }
+
+/* содержание инструкции */
+
+.toc { padding: 18px 18px 22px; display: grid; gap: 4px; }
+
+/* в две колонки, но читается сверху вниз по левой: это оглавление, а не таблица */
+@media (min-width: 720px) {
+  .toc {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(9, auto);
+    grid-auto-flow: column;
+    column-gap: 30px;
+  }
+}
+
+.toc div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px dotted var(--rule-2);
+  font-size: 0.88rem;
+}
+
+.toc em {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  min-width: 2.4em;
+}
+
+.toc .is-app em { color: var(--accent); }
+
+.term__stop { color: var(--accent-bright); }
+.term__dim { color: #7d7767; }

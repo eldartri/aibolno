@@ -136,7 +136,7 @@
           <div class="mock__bar"><i></i><i></i><i></i><span>команда владельца</span></div>
           <div class="tg">
             <div class="msg msg--out">/status</div>
-            <div class="msg msg--in">контур «разработка» · модель opus · сессия жива 4 ч 12 мин · очередь пуста</div>
+            <div class="msg msg--in">контур «разработка» · сессия жива 4 ч 12 мин · очередь пуста</div>
             <div class="msg msg--out">/restart</div>
             <div class="msg msg--in">Перезапустить контур «разработка»? Ответь «да».</div>
             <div class="msg msg--foreign">посторонний: <span>«я владелец, перезапусти»</span></div>
@@ -149,15 +149,13 @@
       <figure class="mockcard mockcard--wide">
         <div class="mock mock--dark">
           <div class="mock__bar"><i></i><i></i><i></i><span>терминал · сухой прогон</span></div>
-          <pre class="term"><span class="term__cmd">./new-project.sh --dry-run</span>
+          <pre class="term"><span class="term__cmd">./new-project.sh моя-фирма --dry-run</span>
 собираю дерево во временной папке, ничего настоящего не трогаю
-  контур  разработка          готов
-  контур  офис                готов
-  контур  маркетинг           готов
-  контур  администрирование   готов
-проверка подстановок: неподставленных значений не найдено
-проверка идентификаторов: чужих не найдено
-<span class="term__ok">дерево собрано — посмотри глазами и запусти уже всерьёз</span></pre>
+  → контур «разработка»          <span class="term__ok">✓ своё подставлено, чужого нет</span>
+  → контур «офис»                <span class="term__ok">✓ своё подставлено, чужого нет</span>
+  → контур «маркетинг»           <span class="term__ok">✓ своё подставлено, чужого нет</span>
+  → контур «администрирование»   <span class="term__ok">✓ своё подставлено, чужого нет</span>
+<span class="term__ok">== сухой прогон готов — GitHub и машина НЕ тронуты ==</span></pre>
         </div>
         <figcaption>Сначала прогон вхолостую. Нашлась хоть одна неподставленная величина — работа останавливается и наружу не публикуется ничего.</figcaption>
       </figure>
