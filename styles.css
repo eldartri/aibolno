@@ -2,7 +2,13 @@
    Направление: витрина, а не документ (слово владельца 26.09, отменяет строку
    ТЗ «документ, а не лендинг»). Тёмный первый экран, ритм разделов, карточки,
    видимая кнопка. Чего нет намеренно: анимаций прокрутки, счётчиков, таймеров,
-   всплывающих окон, чат-виджета, отзывов. */
+   всплывающих окон, чат-виджета, отзывов.
+
+   30.09, слово владельца «сначала крутой лендинг»: первый экран стал
+   двухколонным, пустые рамки под скриншоты заменены схемами, нарисованными
+   прямо в вёрстке. Схемы нарочито схематичны и подписаны словом «схема» —
+   настоящая переписка приватна, а рисунок, выданный за снимок экрана, был бы
+   ровно тем враньём, против которого продаётся сам метод. */
 
 :root {
   --paper: #fbfaf7;
@@ -339,7 +345,7 @@ h2 + .req-box { margin-top: 36px; }
 .tiers { display: grid; gap: 20px; }
 
 @media (min-width: 820px) {
-  .tiers { grid-template-columns: 1fr 1.08fr; gap: 24px; align-items: start; }
+  .tiers { grid-template-columns: 1fr 1.08fr; gap: 24px; align-items: stretch; }
 }
 
 .tier {
@@ -393,7 +399,8 @@ h2 + .req-box { margin-top: 36px; }
   margin: 0;
 }
 
-.tier .btn { margin-top: 26px; align-self: stretch; text-align: center; }
+.tier .btn { margin-top: auto; padding-top: 13px; align-self: stretch; text-align: center; }
+.tier p { margin-bottom: 26px; }
 
 /* ——— кнопки ——— */
 
@@ -697,3 +704,348 @@ footer nav {
 
 footer a { color: var(--dark-ink-2); text-decoration: none; }
 footer a:hover { color: var(--accent-bright); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Схемы вместо снимков экрана (30.09). Рисуются в вёрстке, подписаны
+   словом «схема». Ни одного настоящего скриншота на сайте нет.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ——— первый экран в две колонки ——— */
+
+.hero--split .wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.hero--split .wrap > * { min-width: 0; }
+.hero--split .hero-facts { grid-column: 1 / -1; margin-top: 8px; }
+
+@media (min-width: 960px) {
+  .hero--split .wrap {
+    grid-template-columns: 1.06fr 0.94fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero--split .hero__text h1 { max-width: 13ch; }
+  .hero--split .lead { max-width: 34rem; }
+  .hero--split .hero-facts { margin-top: 26px; }
+}
+
+.hero__mock { position: relative; }
+
+.mock__note {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark-ink-2);
+  opacity: 0.75;
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+/* ——— оконная рама схемы ——— */
+
+.mock {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.mock--phone { max-width: 380px; margin: 0 auto; }
+
+.mock__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+
+.mock__bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--rule-2);
+}
+
+.mock__bar span {
+  min-width: 0;
+  margin-left: 8px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* рама на тёмном фоне — первый экран всегда тёмный, токены схемы не наследуем */
+
+.mock--ondark {
+  border-color: #3a362d;
+  background: #1c1a15;
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .9);
+}
+
+.mock--ondark .mock__bar {
+  background: #23211a;
+  border-bottom-color: #3a362d;
+}
+
+.mock--ondark .mock__bar i { background: #433f35; }
+.mock--ondark .mock__bar span { color: #8b8474; }
+
+/* ——— переписка ——— */
+
+.tg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 16px 14px 18px;
+}
+
+.tg__day {
+  align-self: center;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--paper-2);
+  border-radius: 100px;
+  padding: 3px 12px;
+  margin-bottom: 2px;
+}
+
+.mock--ondark .tg__day { color: #8b8474; background: #26241d; }
+
+.msg {
+  max-width: 88%;
+  padding: 10px 13px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.msg--in {
+  align-self: flex-start;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-bottom-left-radius: 5px;
+}
+
+.msg--out {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-bottom-right-radius: 5px;
+}
+
+.msg--wide { max-width: 100%; }
+
+.mock--ondark .msg--in {
+  background: #262319;
+  border-color: #38342b;
+  color: var(--dark-ink-2);
+}
+
+.mock--ondark .msg--in b { color: var(--dark-ink); }
+
+.msg { overflow-wrap: anywhere; }
+
+.msg code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.mock--ondark .msg code { color: var(--accent-bright); }
+.msg--out code { color: inherit; opacity: .85; }
+
+.msg__proof {
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--rule-2);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.mock--ondark .msg__proof { border-top-color: #3d392f; color: var(--accent-bright); }
+
+.tg__list {
+  margin: 8px 0 0;
+  padding: 0 0 0 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.tg__list li { line-height: 1.45; }
+
+.msg--foreign {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px dashed var(--rule-2);
+  color: var(--ink-3);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.msg--foreign span { font-family: var(--sans); font-size: 0.85rem; }
+
+.msg--deny {
+  border-left: 3px solid var(--accent);
+  color: var(--ink-2);
+}
+
+/* ——— терминал ——— */
+
+.mock--dark { border-color: var(--dark-rule); }
+.mock--dark .mock__bar { background: var(--dark-2); border-bottom-color: var(--dark-rule); }
+.mock--dark .mock__bar i { background: #433f35; }
+.mock--dark .mock__bar span { color: #8b8474; }
+
+.term {
+  margin: 0;
+  padding: 22px 20px 24px;
+  background: var(--dark);
+  color: var(--dark-ink-2);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.85;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.term__cmd { color: var(--dark-ink); }
+.term__cmd::before { content: "$ "; color: var(--accent-bright); }
+.term__ok { color: var(--accent-bright); }
+
+@media (min-width: 760px) {
+  .term { font-size: 0.82rem; }
+}
+
+/* на телефоне строка терминала не влезает; лучше перенос, чем обрезанный хвост */
+@media (max-width: 620px) {
+  .term { white-space: pre-wrap; }
+  .hero .btns .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+}
+
+/* ——— схема контуров ——— */
+
+.diagram { margin-top: 40px; }
+
+.diagram__owner { text-align: center; position: relative; padding-bottom: 30px; }
+
+.diagram__owner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 22px;
+  background: var(--dark-rule);
+}
+
+.diagram__phone {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--dark-ink);
+  border: 1px solid var(--accent-bright);
+  border-radius: 100px;
+  padding: 9px 22px;
+}
+
+.diagram__who {
+  display: block;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  color: var(--dark-ink-2);
+  margin-top: 10px;
+}
+
+.diagram__fan > * { min-width: 0; }
+
+.diagram__fan {
+  display: grid;
+  gap: 14px;
+  border-top: 1px solid var(--dark-rule);
+  padding-top: 26px;
+}
+
+@media (min-width: 640px) {
+  .diagram__fan { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1000px) {
+  .diagram__fan { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+}
+
+.node {
+  position: relative;
+  background: var(--dark-2);
+  border: 1px solid var(--dark-rule);
+  border-radius: var(--r);
+  padding: 22px 18px 20px;
+}
+
+.node::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: -1px;
+  width: 30px;
+  height: 2px;
+  background: var(--accent-bright);
+  border-radius: 2px;
+}
+
+.node b {
+  display: block;
+  font-size: 1.02rem;
+  color: var(--dark-ink);
+  margin-bottom: 5px;
+}
+
+.node span {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--dark-ink-2);
+}
+
+.diagram__rule {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  color: var(--dark-ink-2);
+  text-align: center;
+  margin: 24px 0 0;
+  opacity: .8;
+}
+
+/* ——— полка схем ——— */
+
+.mocks { display: grid; gap: 30px; margin-top: 38px; }
+
+@media (min-width: 900px) {
+  .mocks { grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .mockcard--wide { grid-column: 1 / -1; }
+}
+
+.mockcard { margin: 0; min-width: 0; }
+.mockcard--wide .mock { max-width: 100%; }
