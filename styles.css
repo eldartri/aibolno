@@ -49,19 +49,10 @@ code{font:400 .92em/1.4 var(--font-mono)}
   font:600 22px/1 var(--font-display); letter-spacing:-.02em;
   text-decoration:none; display:flex; align-items:baseline; gap:10px; white-space:nowrap;
 }
-.wordmark small{font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking); color:var(--text-2); text-transform:uppercase}
-.top nav{display:flex; gap:var(--space-3); margin-inline:auto}
+.wordmark small{font:400 13px/1.4 var(--font-text); letter-spacing:0; color:var(--text-2); text-transform:none; white-space:normal; max-width:64ch}
+.top nav{display:flex; gap:var(--space-3); margin-left:auto}
 .top nav a{text-decoration:none; font-weight:500; padding:6px 2px; border-bottom:1.5px solid transparent}
 .top nav a:hover{border-bottom-color:var(--accent)}
-.top__buys{display:flex; gap:var(--space-1); align-items:center; margin-left:auto}
-.top nav + .top__buys{margin-left:0}
-
-/* ---------- пояс под шапкой: обыгрываем название ---------- */
-.pun{background:var(--highlight); border-bottom:1px solid var(--line)}
-.pun p{margin:0; padding:13px 0; font:400 15px/1.5 var(--font-text); color:var(--text-2)}
-.pun b{font-weight:600; color:var(--text)}
-.pun i{font-style:normal; font-weight:600; color:var(--accent)}
-@media (max-width:720px){ .pun p{font-size:14px; padding:11px 0} }
 
 /* ---------- кнопки ---------- */
 .btn{
@@ -86,20 +77,9 @@ code{font:400 .92em/1.4 var(--font-mono)}
 .sheet{padding:var(--space-6) 0}
 /* первый лист страницы начинается выше: наверху незачем держать пустоту */
 main > .sheet:first-child{padding-top:var(--space-4)}
-main > .sheet:first-child .sheet__head{margin-bottom:var(--space-4)}
 .sheet--plate{background:var(--plate); color:var(--on-plate)}
 .sheet--plate .lead,.sheet--plate .note{color:var(--on-plate-2)}
 .sheet--soft{background:var(--highlight)}
-.sheet__head{
-  display:flex; justify-content:space-between; gap:var(--space-2); align-items:baseline;
-  padding-bottom:var(--space-2); border-top:1px solid var(--line);
-  padding-top:var(--space-2); margin-bottom:var(--space-5);
-  font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking);
-  text-transform:uppercase; color:var(--text-2);
-}
-.sheet--plate .sheet__head{border-top-color:var(--line-plate); color:var(--on-plate-2)}
-.sheet__head span:last-child{text-align:right; text-transform:none; letter-spacing:.04em}
-
 .eyebrow{
   font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking);
   text-transform:uppercase; color:var(--accent); margin-bottom:var(--space-3);
@@ -547,23 +527,16 @@ footer{padding:var(--space-5) 0 var(--space-6)}
 @media (max-width:640px){
   :root{--h1:var(--h1-m); --h2:var(--h2-m); --gutter:var(--page-margin-m)}
   .top .wrap{min-height:60px; gap:10px}
-  .top nav{display:none}
+  /* на телефоне меню не помещается, но шапка не должна остаться без действия:
+     из четырёх пунктов оставляем последний — «Цена» */
+  .top nav{gap:0}
+  .top nav a{display:none}
+  .top nav a:last-child{display:inline; white-space:nowrap}
   .wordmark{font-size:21px}
-  .wordmark small{display:none}
-  /* в шапке телефона три рамки подряд спорили друг с другом и с именем:
-     «Бесплатно» становится тихой ссылкой, рамка остаётся одна — у цены */
-  .top__buys{gap:14px}
-  .top__buys .btn--accent{padding:9px 14px}
-  /* каламбур про название на телефоне съедал первый экран раньше заголовка;
-     в подвале он всё равно сказан подписью «Ай, больно» */
-  .pun{display:none}
-  /* шапка листа: два длинных куска моноширинного сталкивались в две колонки
-     и упирались в кромки — на узком ставим их друг под другом */
-  .sheet__head{flex-direction:column; align-items:flex-start; gap:2px;
-    font-size:11px; letter-spacing:.05em; margin-bottom:var(--space-3)}
-  .sheet__head span:last-child{text-align:left; letter-spacing:.03em}
+  .wordmark{flex-direction:column; align-items:flex-start; gap:1px; line-height:1.15}
+  .wordmark small{font-size:11px; line-height:1.3; max-width:32ch}
+  /* имя с подписью на телефоне встаёт в две строки — цены в шапке больше нет */
   main > .sheet:first-child{padding-top:var(--space-3)}
-  main > .sheet:first-child .sheet__head{margin-bottom:var(--space-3)}
   /* строка условий под кнопками моноширинным с трекингом читалась как
      служебная надпись — на телефоне обычным текстом */
   .hero__fine,.final__fine{font-family:var(--font-text); font-size:13px;
