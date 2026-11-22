@@ -5,72 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Купить — aibolno.ru</title>
 <meta name="description" content="50 000 ₽, один раз. Доступ к закрытому репозиторию на твой логин GitHub, инструкция на 49 страниц, обновления 1.x в течение года. Счёт выставляется вручную — напиши в Telegram.">
-<meta name="theme-color" content="#15140f">
+<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1530" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design/tokens.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="top top--ondark">
+<header class="top">
   <div class="wrap">
-    <a class="wordmark" href="/"><b>ai</b>bolno.ru</a>
+    <a class="wordmark" href="/">aibolno <small>КБ ИИ-разработки</small></a>
     <nav>
-      <a href="index.html#kak-rabotaet">Как работает</a>
+      <a href="index.html#ustroystvo">Как устроено</a>
       <a href="sostav.html">Что входит</a>
       <a href="metod.html">Бесплатно</a>
       <a href="sostav.html#usloviya">Условия</a>
     </nav>
-    <a class="btn btn--accent" href="oplata.html" aria-current="page">Купить</a>
+    <div class="top__buys">
+      <a class="btn btn--accent btn--sm" href="oplata.html" aria-current="page">50&nbsp;000&nbsp;₽</a>
+    </div>
   </div>
 </header>
 
 <main>
 
-<section class="hero hero--page">
+<section class="sheet">
   <div class="wrap">
-    <p class="eyebrow">Один платёж, без подписки</p>
-    <h1>50 000 ₽, один раз</h1>
-    <p class="lead">Собственная инфраструктура ИИ-разработки: исходный код целиком, доступ к закрытому репозиторию на твой логин GitHub, инструкция на 49 страниц, обновления версии 1.x в течение года.</p>
+    <p class="sheet__head"><span>Документ · условия поставки</span><span>один платёж</span></p>
+    <a class="page__back" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      На главную</a>
+
+    <div class="spec">
+      <div>
+        <p class="eyebrow">Один платёж, без подписки</p>
+        <h1>50 000 ₽, один раз</h1>
+        <p class="lead" style="margin-top:var(--space-3)">Собственная инфраструктура ИИ-разработки: исходный код целиком, доступ к закрытому репозиторию на твой логин GitHub, инструкция на 49 страниц, обновления версии 1.x в течение года.</p>
+        <div class="btns" style="margin-top:var(--space-4)">
+          <a class="btn btn--accent" href="https://t.me/Eldar_tri">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            Написать и получить счёт</a>
+          <a class="btn btn--ghost" href="sostav.html">Посмотреть состав целиком</a>
+        </div>
+      </div>
+
+      <div class="price">
+        <p class="price__label">Стоимость комплекта</p>
+        <p class="price__sum">50 000 ₽</p>
+        <p>Разово. Без подписки на продукт. Код остаётся у тебя.</p>
+        <div class="price__how">
+          <b>Оплата идёт через разговор, а не через кнопку.</b>
+          <p>Платёжной системы на сайте нет намеренно: продавец видит, кому открыл доступ, а ты получаешь живого человека на другом конце, а не форму.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap">
+    <p class="sheet__head"><span>Порядок покупки</span><span>четыре шага</span></p>
+    <h2 style="margin-bottom:var(--space-5)">Как купить</h2>
+
+    <div class="steps">
+      <article class="step"><p class="step__n">01</p><h3>Пишешь</h3><p>Кнопка ниже открывает личное сообщение в Telegram. Назови свой логин GitHub и на кого оформлять — физлицо, ИП или компанию.</p></article>
+      <article class="step"><p class="step__n">02</p><h3>Получаешь счёт</h3><p>Выставляется вручную, обычно в тот же день.</p></article>
+      <article class="step"><p class="step__n">03</p><h3>Платишь</h3><p>После оплаты приходит приглашение в закрытый репозиторий — на тот логин GitHub, который ты назвал.</p></article>
+      <article class="step step--last"><p class="step__n">04</p><h3>Разворачиваешь</h3><p>Открываешь папку в Claude&nbsp;Code и пишешь одну строку: помощник проверяет машину, задаёт вопросы и собирает всё сам. Занимает вечер.</p></article>
+    </div>
+
+    <div class="btns" style="margin-top:var(--space-4)">
+      <a class="btn btn--accent" href="https://t.me/Eldar_tri">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        Написать в Telegram и получить счёт</a>
+    </div>
+    <p class="note" style="margin-top:var(--space-2)">Если Telegram не открывается — напиши туда же с компьютера: <code>t.me/Eldar_tri</code></p>
+  </div>
+</section>
+
+<section class="sheet sheet--soft">
+  <div class="wrap">
+    <p class="sheet__head"><span>До начала</span><span>технические требования</span></p>
+    <h2>Что нужно иметь</h2>
+
+    <div class="req">
+      <table>
+        <caption>Требования к рабочему месту</caption>
+        <tbody>
+          <tr><td>1</td><td>Mac, который не выключается</td></tr>
+          <tr><td>2</td><td>Claude&nbsp;Code</td></tr>
+          <tr><td>3</td><td>Оплаченный доступ к модели с запасом на месяц</td></tr>
+          <tr><td>4</td><td>Telegram</td></tr>
+          <tr><td>5</td><td>Аккаунт GitHub</td></tr>
+          <tr><td>6</td><td>Четыре инструмента в терминале: <code>gh</code>, <code>tmux</code>, <code>bun</code>, <code>python3</code></td></tr>
+        </tbody>
+      </table>
+      <div>
+        <div class="warnbox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <p><b>Модели — отдельный расход, и он на тебе</b>Живые контуры расходуют платный доступ к моделям постоянно, даже когда ты ими не пользуешься. Неиспользуемые контуры надо гасить.</p>
+        </div>
+        <p class="note" style="margin-top:var(--space-3)">Если хоть одного из четырёх инструментов нет — поставить придётся до начала. Проверяются одной строкой, она первым делом в инструкции.</p>
+        <p class="note" style="margin-top:var(--space-2)">Покупка одна на человека или компанию, перепродажа и передача доступа третьим лицам не предусмотрены. Полные условия — <a href="sostav.html#usloviya">на странице состава</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Пусть ИИ работает на тебя. А ты — на свой бизнес.</h2>
     <div class="btns">
       <a class="btn btn--accent" href="https://t.me/Eldar_tri">Написать и получить счёт</a>
-      <a class="btn btn--ghost" href="sostav.html">Посмотреть состав целиком</a>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="sec-label">Как купить</p>
-    <h2>Оплата идёт через разговор, а не через кнопку</h2>
-    <p class="sec-lead">Платёжной системы на сайте нет намеренно. Ты пишешь в Telegram, получаешь счёт, платишь — доступ открывается на твой логин GitHub. Так продавец видит, кому открыл доступ, а ты получаешь живого человека на другом конце, а не форму.</p>
-
-    <div class="grid">
-      <article class="card"><span class="num">01</span><p><b>Пишешь.</b> Кнопка ниже открывает личное сообщение в Telegram. Назови свой логин GitHub и на кого оформлять — физлицо, ИП или компанию.</p></article>
-      <article class="card"><span class="num">02</span><p><b>Получаешь счёт.</b> Выставляется вручную, обычно в тот же день.</p></article>
-      <article class="card"><span class="num">03</span><p><b>Платишь.</b> После оплаты приходит приглашение в закрытый репозиторий — на тот логин GitHub, который ты назвал.</p></article>
-      <article class="card"><span class="num">04</span><p><b>Разворачиваешь.</b> Открываешь папку в Claude&nbsp;Code и пишешь одну строку: помощник проверяет машину, задаёт вопросы и собирает всё сам. Занимает вечер.</p></article>
-    </div>
-
-    <div class="btns">
-      <a class="btn btn--accent" href="https://t.me/Eldar_tri">Написать в Telegram и получить счёт</a>
-    </div>
-    <p class="note">Если Telegram не открывается — напиши туда же с компьютера: <code>t.me/Eldar_tri</code></p>
-  </div>
-</section>
-
-<section class="band-soft">
-  <div class="wrap">
-    <p class="sec-label">До начала</p>
-    <h2>Что нужно иметь</h2>
-    <div class="req-box">
-      <p class="req">Mac, который не выключается. Claude&nbsp;Code. Оплаченный доступ к модели с запасом на месяц. Telegram. Аккаунт GitHub.</p>
-      <p class="req req--note">И четыре инструмента в терминале: <code>gh</code>, <code>tmux</code>, <code>bun</code>, <code>python3</code>. Если хоть одного нет — поставить придётся до начала. Проверяются одной строкой, она первым делом в инструкции.</p>
-    </div>
-    <p class="prose" style="margin-top:26px">Живые контуры расходуют платный доступ к моделям постоянно, даже когда ты ими не пользуешься. Это отдельный расход, и он на тебе. Неиспользуемые контуры надо гасить.</p>
-    <p class="prose">Покупка одна на человека или компанию, перепродажа и передача доступа третьим лицам не предусмотрены. Полные условия — <a href="sostav.html#usloviya">на странице состава</a>.</p>
+    <p class="final__fine">Один платёж · Код на твоём GitHub · Обновления 12 мес. · ИИ-модели отдельно</p>
   </div>
 </section>
 
@@ -78,8 +130,16 @@
 
 <footer>
   <div class="wrap">
-    <p class="name-note">aibolno.ru — это «ай, больно». Пишут и «айбольно», и латиницей <b>aibolno</b> — это одно и то же место.</p>
-    <nav>
+    <div class="stampline">
+      <div>
+        <span class="wordmark">aibolno</span>
+        <small>«Ай, больно»</small>
+      </div>
+      <div><dt>Изделие</dt><dd>Инфраструктура ИИ-разработки</dd></div>
+      <div><dt>Связь</dt><dd><a href="https://t.me/Eldar_tri">Telegram владельца</a></dd></div>
+      <div><dt>Документ</dt><dd>Условия поставки</dd></div>
+    </div>
+    <nav class="footlinks">
       <a href="/">Главная</a>
       <a href="sostav.html">Что входит</a>
       <a href="metod.html">Бесплатно</a>

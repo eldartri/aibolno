@@ -5,312 +5,444 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>aibolno — инфраструктура ИИ-разработки и команда ИИ-агентов</title>
 <meta name="description" content="Создай собственную инфраструктуру ИИ-разработки. Несколько ИИ-агентов работают над кодом, проверяют задачи и отправляют отчёты в Telegram. Исходный код, один платёж — 50 000 ₽.">
-<meta name="theme-color" content="#15140f">
+<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1530" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Хватит работать на ИИ. Пусть ИИ работает на тебя.">
 <meta property="og:description" content="Собственная инфраструктура ИИ-разработки: несколько агентов пишут код, проверяют результат и отчитываются в Telegram. Один платёж — 50 000 ₽.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aibolno.ru/">
+<meta property="og:locale" content="ru_RU">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design/tokens.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="top top--ondark">
+<header class="top">
   <div class="wrap">
-    <a class="wordmark" href="/"><b>ai</b>bolno.ru</a>
+    <a class="wordmark" href="/">aibolno <small>КБ ИИ-разработки</small></a>
     <nav>
-      <a href="#kak-rabotaet">Как работает</a>
-      <a href="sostav.html">Что входит</a>
+      <a href="#ustroystvo">Как устроено</a>
+      <a href="#pult">Пульт</a>
+      <a href="#sravnenie">Сравнение</a>
       <a href="metod.html">Бесплатно</a>
-      <a href="sostav.html#usloviya">Условия</a>
+      <a href="#komplekt">Комплект</a>
     </nav>
-    <a class="btn btn--accent" href="oplata.html">Купить</a>
+    <div class="top__buys">
+      <a class="btn btn--ghost btn--sm" href="metod.html">Бесплатно</a>
+      <a class="btn btn--accent btn--sm" href="oplata.html">50&nbsp;000&nbsp;₽</a>
+    </div>
   </div>
 </header>
 
 <main>
 
-<section class="hero hero--split">
+<!-- ЛИСТ 1 -->
+<section class="sheet hero">
   <div class="wrap">
-    <div class="hero__text">
-      <p class="eyebrow">Твоя собственная ИИ-команда разработки</p>
-      <h1>Хватит работать на&nbsp;ИИ. Пусть ИИ работает на&nbsp;тебя.</h1>
-      <p class="lead">Построй собственную инфраструктуру ИИ-разработки. Несколько агентов пишут код, проверяют результат, исправляют ошибки и выполняют задачи, пока ты занимаешься бизнесом. Управляй разработкой через Telegram — без постоянного сидения за компьютером и без найма целой команды.</p>
-      <div class="btns">
-        <a class="btn btn--accent" href="oplata.html">Получить ИИ-инфраструктуру — 50 000 ₽</a>
-        <a class="btn btn--ghost" href="#kak-rabotaet">Посмотреть, как это работает</a>
-      </div>
-      <p class="hero__fine">Один платёж. Исходный код на твоём GitHub. Обновления в течение года. Расходы на ИИ-модели отдельно.</p>
-    </div>
+    <p class="sheet__head"><span>Лист 1 / 9 · первый экран</span><span>aibolno · инфраструктура ИИ-разработки</span></p>
 
-    <div class="hero__mock">
-      <div class="mock mock--phone mock--ondark">
-        <div class="mock__bar"><i></i><i></i><i></i><span>Telegram · контур «разработка»</span></div>
-        <div class="tg">
-          <div class="tg__day">сегодня</div>
-          <div class="msg msg--out">почини пересчёт валюты в счетах</div>
-          <div class="msg msg--in">Взял. Нашёл причину: округление при пересчёте, <code>billing/total.py:118</code>. Делаю.</div>
-          <div class="msg msg--in">Готово. Тест был красным до правки, сейчас зелёный — вот вывод прогона. Ветка <code>fix/invoice-rounding</code>, дифф на 6 строк.<div class="msg__proof">доказательство приложено</div></div>
-          <div class="msg msg--out">мержим</div>
-          <div class="msg msg--in">Смержил. Основная ветка зелёная.</div>
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow">Твоя собственная ИИ-команда разработки</p>
+        <h1>Хватит работать на&nbsp;ИИ. Пусть ИИ работает на&nbsp;тебя.</h1>
+        <p class="lead">Собственная инфраструктура ИИ-разработки. Несколько агентов пишут код, проверяют результат и исправляют ошибки, пока ты занимаешься бизнесом. Управление — через Telegram.</p>
+        <div class="btns">
+          <a class="btn btn--accent" href="oplata.html">Получить инфраструктуру — 50&nbsp;000&nbsp;₽
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#pult">Посмотреть, как это работает</a>
+        </div>
+        <p class="hero__fine">Один платёж · Код на твоём GitHub · Обновления 12 мес. · ИИ-модели отдельно</p>
+      </div>
+
+      <div class="hero__panel">
+        <p class="hero__panel-note">схема работы, не снимок экрана</p>
+        <div class="win">
+          <div class="win__bar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            <span class="win__who"><b>aibolno · команда</b><span>чат управления в Telegram</span></span>
+            <span class="win__tag">схема, не снимок экрана</span>
+          </div>
+          <div class="win__body">
+            <p class="win__day">сегодня</p>
+            <div class="msg msg--out">Добавь оплату по подписке в личный кабинет<time>09:00</time></div>
+            <div class="msg">Задача принята. Разбита на этапы и распределена по контурам.<time>09:01</time></div>
+            <div class="msg">Разработка завершена, изменения переданы на проверку.<time>11:10</time></div>
+            <div class="msg msg--fail"><b>Отказ проверки</b>Проверка не пройдена — возвращено в исправления.<time>11:32</time></div>
+            <div class="msg">Исправлено. Повторная проверка пройдена.<time>12:20</time></div>
+            <div class="msg">Отчёт готов. Нужно твоё решение.<time>12:22</time></div>
+          </div>
         </div>
       </div>
-      <p class="mock__note">Схема, не снимок экрана</p>
     </div>
 
-    <p class="hero-facts">
-      <span><b>4</b> рабочих контура из коробки</span>
-      <span><b>одна</b> команда на разворачивание</span>
-      <span><b>49</b> страниц инструкции</span>
-      <span><b>один</b> платёж, без подписки</span>
+    <div class="facts">
+      <div><b>4</b><span>контура</span></div>
+      <div><b>одна</b><span>команда в чате</span></div>
+      <div><b>49</b><span>страниц инструкции</span></div>
+      <div><b>один</b><span>платёж</span></div>
+    </div>
+
+    <p class="chips">
+      <span class="chips__label">Это не:</span>
+      <span class="chip">нейросеть</span>
+      <span class="chip">сборник промптов</span>
+      <span class="chip">курс по программированию</span>
+      <span class="chip">установка в один клик</span>
+      <span class="chip">полная автономность</span>
     </p>
   </div>
 </section>
 
-<section id="problema">
+<!-- ЛИСТ 2 -->
+<section class="sheet" id="problema">
   <div class="wrap">
-    <p class="sec-label">Где болит</p>
-    <h2>Ты заменил программистов нейросетью. Но&nbsp;теперь сам работаешь за&nbsp;всех.</h2>
-    <p class="sec-lead">Раньше нужно было писать код самому или нанимать разработчиков. Потом появился Claude Code, и стало проще. Но выросла новая работа — не писать код, а управлять тем, кто его пишет.</p>
-    <div class="grid">
-      <article class="card"><span class="num">01</span><p>Ты пишешь промпты, следишь за выполнением, исправляешь ошибки и запускаешь следующий этап. Руками, каждый раз.</p></article>
-      <article class="card"><span class="num">02</span><p>Один чат забывает вчерашнее и упирается в конец контекста ровно тогда, когда набрал разгон.</p></article>
-      <article class="card"><span class="num">03</span><p>«Готово» сказано уверенно, а проверить нечем — доказательства к слову не приложено.</p></article>
-      <article class="card"><span class="num">04</span><p>ИИ пишет код, но за компьютером ты всё равно проводишь целый день. Ты перестал быть программистом и стал оператором нейросети.</p></article>
-      <article class="card card--full"><p><b>Следующий шаг — автоматизировать не написание кода, а организацию самой работы.</b> Этим и занимается то, что ты здесь покупаешь.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="reshenie" class="band-dark">
-  <div class="wrap">
-    <p class="sec-label">Что это такое</p>
-    <h2>Не один ИИ-помощник. Целая инфраструктура разработки.</h2>
-    <p class="sec-lead">Вместо одного чата, которому приходится объяснять каждую следующую задачу, у тебя работает несколько изолированных контуров. Контур — отдельная рабочая единица: свой репозиторий, свой набор ролей, свои правила, свой бот в Telegram и сторож, который держит его живым. Ты управляешь системой, а не каждым действием нейросети.</p>
-
-    <div class="diagram">
-      <div class="diagram__owner">
-        <span class="diagram__phone">Telegram</span>
-        <span class="diagram__who">ты — с телефона</span>
+    <p class="sheet__head"><span>Лист 2 / 9 · проблема</span><span>журнал одного дня</span></p>
+    <div class="split">
+      <div>
+        <h2>Ты заменил программистов нейросетью. Но&nbsp;теперь сам работаешь за&nbsp;всех.</h2>
+        <p class="lead" style="margin-top:var(--space-3)">Ты пишешь промпты, следишь за задачами, проверяешь результат, исправляешь ошибки и запускаешь следующий этап. ИИ пишет код, а ты всё равно проводишь за компьютером целый день.</p>
+        <p style="margin-top:var(--space-3)"><b>Ты перестал быть программистом. Ты стал оператором нейросети.</b></p>
       </div>
-      <div class="diagram__fan">
-        <article class="node"><b>Разработка</b><span>код, схема данных, тесты, релизы</span></article>
-        <article class="node"><b>Офис</b><span>почта, календарь, документы</span></article>
-        <article class="node"><b>Маркетинг</b><span>тексты, каналы, витрины</span></article>
-        <article class="node"><b>Администрирование</b><span>задачи, индекс решений, машина, расходы</span></article>
+      <div class="win">
+        <div class="win__bar">
+          <span class="win__who"><b>Ты ↔ Claude Code · один день</b></span>
+          <span class="win__tag">схема, не снимок экрана</span>
+        </div>
+        <div class="win__body">
+          <div class="msg msg--out">Сделай форму оплаты<time>09:02</time></div>
+          <div class="msg">Готово, проверьте<time>09:14</time></div>
+          <div class="msg msg--out">Тесты упали, почини<time>11:40</time></div>
+          <div class="msg msg--out">Теперь сломалась авторизация…<time>16:55</time></div>
+          <div class="msg msg--out msg--late">Ладно, следующий этап<time>23:48</time></div>
+        </div>
       </div>
-      <p class="diagram__rule">у каждого свой репозиторий · свой бот · свой каталог состояния · свой сторож</p>
-    </div>
-
-    <p class="sec-lead sec-lead--tight">Внутри контура задача проходит один и тот же путь. Это не настройка «по желанию» — так устроен процесс, который приезжает вместе с инфраструктурой.</p>
-
-    <div class="grid">
-      <article class="card"><span class="num">01</span><p><b>Планирование.</b> Большая задача разбирается на этапы с понятным результатом и записывается заданием.</p></article>
-      <article class="card"><span class="num">02</span><p><b>Разработка.</b> Агенты с разными ролями пишут код, схему данных, интеграции и интерфейсы.</p></article>
-      <article class="card"><span class="num">03</span><p><b>Проверка.</b> Отдельная роль приёмки гоняет работу, а не читает отчёт о ней. Красная команда ищет дыры до того, как задание пойдёт в работу.</p></article>
-      <article class="card"><span class="num">04</span><p><b>Исправления.</b> Найденное возвращается в работу внутри того же контура — без того, чтобы ты заново объяснял каждый шаг.</p></article>
-      <article class="card card--full"><p><b>Контроль — твой.</b> Ты получаешь отчёт с доказательством и ставишь подпись там, где решение за человеком. Без твоей подписи работа в прод не уходит: это записано в правилах контура, а не оставлено на совесть модели.</p></article>
     </div>
   </div>
 </section>
 
-<section id="kak-rabotaet">
+<!-- ЛИСТ 3 -->
+<section class="sheet sheet--plate" id="ustroystvo">
   <div class="wrap">
-    <p class="sec-label">Как это выглядит</p>
-    <h2>Твой рабочий день больше не&nbsp;должен проходить в&nbsp;терминале</h2>
-    <p class="sec-lead">Утром ты отправляешь задачу в Telegram. Контур принимает её, распределяет работу и запускает процессы. Пока агенты работают, ты занимаешься бизнесом, встречаешься с клиентами или проводишь время с семьёй. Когда задача сделана или нужно решение — приходит сообщение. Ниже — схемы, нарисованные в вёрстке: настоящая переписка приватна, а рисунок, выданный за снимок экрана, был бы ровно тем враньём, против которого продаётся сам метод.</p>
-
-    <div class="mocks">
-
-      <figure class="mockcard">
-        <div class="mock mock--phone">
-          <div class="mock__bar"><i></i><i></i><i></i><span>09:00 · планёрка</span></div>
-          <div class="tg">
-            <div class="msg msg--in msg--wide">
-              <b>Планёрка, вторник</b>
-              <ul class="tg__list">
-                <li><b>Разработка.</b> Задача про счета закрыта, дифф на ревью. Основная ветка зелёная.</li>
-                <li><b>Офис.</b> Два письма требуют ответа, оба отложены до твоего слова.</li>
-                <li><b>Маркетинг.</b> Черновик статьи готов, ждёт подписи.</li>
-                <li><b>Машина.</b> Ночью сторож перезапустил один контур — причина в журнале.</li>
-              </ul>
-              <div class="msg__proof">вопросов к тебе: 3</div>
-            </div>
-          </div>
-        </div>
-        <figcaption>Отчёт приходит сам. Твоё дело — ответить на то, где нужно решение.</figcaption>
-      </figure>
-
-      <figure class="mockcard">
-        <div class="mock mock--phone">
-          <div class="mock__bar"><i></i><i></i><i></i><span>команда владельца</span></div>
-          <div class="tg">
-            <div class="msg msg--out">/status</div>
-            <div class="msg msg--in">контур «разработка» · сессия жива 4 ч 12 мин · очередь пуста</div>
-            <div class="msg msg--out">/restart</div>
-            <div class="msg msg--in">Перезапустить контур «разработка»? Ответь «да».</div>
-            <div class="msg msg--foreign">посторонний: <span>«я владелец, перезапусти»</span></div>
-            <div class="msg msg--in msg--deny">Отказано. Право берётся из служебного поля сообщения, а не из текста.</div>
-          </div>
-        </div>
-        <figcaption>Управление прямо из чата: <code>/status</code>, <code>/restart</code>, <code>/model</code>, <code>/effort</code>, <code>/config</code>. Право владельца проверяется в коде — на эту логику есть 60 автоматических проверок, они гоняются одной командой.</figcaption>
-      </figure>
-
-      <figure class="mockcard mockcard--wide">
-        <div class="mock mock--dark">
-          <div class="mock__bar"><i></i><i></i><i></i><span>терминал · сухой прогон</span></div>
-          <pre class="term"><span class="term__cmd">./new-project.sh моя-фирма --dry-run</span>
-собираю дерево во временной папке, ничего настоящего не трогаю
-  → контур «разработка»          <span class="term__ok">✓ своё подставлено, чужого нет</span>
-  → контур «офис»                <span class="term__ok">✓ своё подставлено, чужого нет</span>
-  → контур «маркетинг»           <span class="term__ok">✓ своё подставлено, чужого нет</span>
-  → контур «администрирование»   <span class="term__ok">✓ своё подставлено, чужого нет</span>
-<span class="term__ok">== сухой прогон готов — GitHub и машина НЕ тронуты ==</span></pre>
-        </div>
-        <figcaption>Разворачивание — одна команда, и сначала вхолостую. Нашлась хоть одна неподставленная величина — работа останавливается и наружу не публикуется ничего.</figcaption>
-      </figure>
-
+    <p class="sheet__head"><span>Лист 3 / 9 · как устроено</span><span>вид А</span></p>
+    <div class="split">
+      <h2>Не один ИИ-помощник. Целая инфраструктура разработки.</h2>
+      <p class="lead">Вместо одного чата — система специализированных агентов. Контур — отдельная рабочая единица: свой репозиторий, свой набор ролей, свой бот в Telegram и сторож, который держит его живым. Ты управляешь системой, а не каждым действием нейросети.</p>
     </div>
+
+    <div class="flow" style="margin-top:var(--space-5)">
+      <p class="flow__in"><span>Вход · задача из Telegram</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></p>
+      <ul class="flow__steps">
+        <li><i>1</i><b>Планирование</b><p>Большая задача разбивается на этапы с понятным результатом.</p></li>
+        <li><i>2</i><b>Разработка</b><p>Агенты пишут код, функции, интерфейсы и интеграции.</p></li>
+        <li><i>3</i><b>Проверка</b><p>Тесты, анализ изменений, поиск проблем.</p></li>
+        <li><i>4</i><b>Исправления</b><p>Ошибки возвращаются в работу без ручных объяснений.</p></li>
+      </ul>
+      <p class="flow__out"><i>5</i><span><b>Контроль.</b>Отчёт приходит человеку. Решение — за ним.</span></p>
+    </div>
+    <p class="caption">схема работы, не снимок экрана</p>
   </div>
 </section>
 
-<section id="ekonomika" class="band-soft">
+<!-- ЛИСТ 4 -->
+<section class="sheet" id="pult">
   <div class="wrap">
-    <p class="sec-label">Деньги и время</p>
-    <h2>Создавай IT-продукты, а&nbsp;не&nbsp;постоянные расходы на&nbsp;разработку</h2>
-    <p class="sec-lead">Команда разработчиков — это найм, управление, регулярные выплаты и постоянный контроль. Один человек с Claude Code экономит деньги, но платит своим временем: каждую задачу приходится вести руками. Инфраструктура агентов забирает на себя повторяющуюся часть этой работы. Сколько именно — зависит от проекта, и честного общего числа здесь нет.</p>
-
-    <div class="compare">
-      <table>
-        <thead>
-          <tr><th></th><th>Команда разработчиков</th><th>Один человек с Claude&nbsp;Code</th><th class="is-us">aibolno</th></tr>
-        </thead>
+    <p class="sheet__head"><span>Лист 4 / 9 · пульт в Telegram</span><span>пять состояний</span></p>
+    <div class="split">
+      <h2>Твой рабочий день больше не&nbsp;проходит в&nbsp;терминале.</h2>
+      <table class="when">
         <tbody>
-          <tr><th>Найм сотрудников</th><td>Обычно нужен</td><td>Не нужен</td><td class="is-us">Не нужен для работы самой системы</td></tr>
-          <tr><th>Ручное управление задачами</th><td>Через команду</td><td>Постоянное</td><td class="is-us">Частично автоматизировано</td></tr>
-          <tr><th>Параллельная работа</th><td>Да</td><td>Зависит от организации</td><td class="is-us">Несколько контуров</td></tr>
-          <tr><th>Управление через Telegram</th><td>Требует отдельной настройки</td><td>Требует отдельной настройки</td><td class="is-us">Предусмотрено из коробки</td></tr>
-          <tr><th>Контроль качества</th><td>Команда</td><td>Самостоятельно</td><td class="is-us">Роль приёмки и проверки + твоя подпись</td></tr>
-          <tr><th>Расходы</th><td>Зарплаты и инфраструктура</td><td>Модели и личное время</td><td class="is-us">50 000 ₽ один раз + модели и своя машина</td></tr>
+          <tr><th>09:00</th><td>Отправляешь задачу в Telegram</td></tr>
+          <tr><th>сразу</th><td>Инфраструктура организует выполнение</td></tr>
+          <tr><th>днём</th><td>Ты занят своим</td></tr>
+          <tr><th>сигнал</th><td>Когда готово или нужно решение</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="compare__hint">таблица листается вбок →</p>
-    <p class="note">Таблица про устройство работы, а не обещание экономии. Инфраструктура не заменяет команду разработчиков и не бывает дешевле при любом размере проекта.</p>
-  </div>
-</section>
 
-<section id="shagi">
-  <div class="wrap">
-    <p class="sec-label">Порядок</p>
-    <h2>Один раз настраиваешь. Дальше управляешь результатом.</h2>
-    <div class="grid">
-      <article class="card"><span class="num">01</span><p><b>Получаешь инфраструктуру.</b> После оплаты открывается доступ к закрытому репозиторию на твой логин GitHub: исходный код и инструкция.</p></article>
-      <article class="card"><span class="num">02</span><p><b>Разворачиваешь систему.</b> Заполняешь четыре поля конфига, гоняешь вхолостую, потом по-настоящему. Боты в Telegram заводятся руками — создавать их программно платформа не даёт.</p></article>
-      <article class="card"><span class="num">03</span><p><b>Подключаешь свой проект.</b> Пишешь в правилах контура, что строим и для кого. Пока это не заполнено, контур будет исправно и дёшево идти не туда.</p></article>
-      <article class="card"><span class="num">04</span><p><b>Управляешь разработкой.</b> Ставишь задачи с телефона, получаешь отчёты с доказательством, принимаешь решения там, где они за человеком.</p></article>
+    <div class="states">
+      <figure>
+        <div class="win">
+          <div class="win__bar">ты → команда</div>
+          <div class="win__body">
+            <div class="msg msg--out">Добавь оплату по подписке в личный кабинет<time>отправлено · 09:00</time></div>
+          </div>
+        </div>
+        <figcaption><i>1</i>Задача</figcaption>
+      </figure>
+      <figure>
+        <div class="win">
+          <div class="win__bar">команда</div>
+          <div class="win__body">
+            <p class="win__sys">задача в работе</p>
+            <div class="msg">Этапы распределены по контурам.</div>
+          </div>
+        </div>
+        <figcaption><i>2</i>Выполнение</figcaption>
+      </figure>
+      <figure>
+        <div class="win">
+          <div class="win__bar">команда</div>
+          <div class="win__body">
+            <div class="msg msg--fail"><b>Отказ проверки</b>Найдена ошибка — возвращено в исправления.</div>
+            <div class="msg">Повторная проверка пройдена.</div>
+          </div>
+        </div>
+        <figcaption><i>3</i>Проверка</figcaption>
+      </figure>
+      <figure>
+        <div class="win">
+          <div class="win__bar">команда</div>
+          <div class="win__body">
+            <div class="msg">Отчёт: что изменено и какие проверки пройдены.</div>
+          </div>
+        </div>
+        <figcaption><i>4</i>Отчёт</figcaption>
+      </figure>
+      <figure>
+        <div class="win">
+          <div class="win__bar">команда</div>
+          <div class="win__body">
+            <div class="msg">Нужно твоё решение.<span class="msg__btns"><span>Принять</span><span>Вернуть</span></span></div>
+          </div>
+        </div>
+        <figcaption><i>5</i>Согласование</figcaption>
+      </figure>
     </div>
-    <p class="note">Установки в один клик здесь нет. Первоначальная настройка занимает вечер и требует внимания — зато дальше система живёт сама.</p>
+
+    <p class="caption">все экраны переписки на сайте — схемы, не снимки экрана: в настоящих чатах лежат данные людей</p>
   </div>
 </section>
 
-<section id="dokazatelstva" class="band-dark">
+<!-- ЛИСТ 5 -->
+<section class="sheet sheet--soft" id="sravnenie">
   <div class="wrap">
-    <p class="sec-label">Это не теория</p>
-    <h2>Так уже создаются продукты</h2>
-    <p class="sec-lead">Этой же инфраструктурой собран <b>Физкульт AI</b> — ИИ-тренер в Telegram: человек подключает свои часы, бот разбирает тренировки и отвечает на вопросы про нагрузку. Его сделал один человек, без опыта в программировании и без найма разработчиков. Продукт живёт в проде и продаётся по подписке.</p>
-    <div class="grid">
-      <article class="card"><p><b>Кто делал.</b> Один владелец и контуры: разработка, офис, маркетинг, администрирование. Нанятых программистов в проекте нет.</p></article>
-      <article class="card"><p><b>Как ставятся задачи.</b> С телефона, в Telegram. Отчёт о работе приходит туда же — вместе с доказательством, а не со словом «готово».</p></article>
-      <article class="card"><p><b>Что проверяется.</b> Задание проходит красную команду до работы, а результат — приёмку после. Спорное останавливается и выносится владельцу.</p></article>
-      <article class="card"><p><b>Чего здесь нет.</b> Данных пользователей, их переписки и имён. Чужие личные данные на витрину не выносятся ни в каком виде.</p></article>
+    <p class="sheet__head"><span>Лист 5 / 9 · ведомость сравнения</span><span>три способа вести разработку</span></p>
+    <h2>Создавай IT-продукты, а&nbsp;не&nbsp;постоянные расходы на&nbsp;разработку.</h2>
+
+    <p class="table-hint" style="margin-top:var(--space-4)">← таблица листается вбок →</p>
+    <div class="table-scroll" style="margin-top:var(--space-4)">
+      <table class="ved">
+        <thead>
+          <tr><th>Показатель</th><th>Команда разработчиков</th><th>Один человек с Claude Code</th><th class="is-us">aibolno</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Найм</th><td>Обычно нужен</td><td>Не нужен</td><td class="is-us">Не нужен для работы самой системы</td></tr>
+          <tr><th>Ручное управление задачами</th><td>Через команду</td><td>Постоянное</td><td class="is-us">Частично автоматизировано</td></tr>
+          <tr><th>Параллельная работа</th><td>Да</td><td>Зависит от организации</td><td class="is-us">Несколько контуров</td></tr>
+          <tr><th>Управление через Telegram</th><td>Требует отдельной настройки</td><td>Требует отдельной настройки</td><td class="is-us">Предусмотрено</td></tr>
+          <tr><th>Контроль качества</th><td>Команда</td><td>Самостоятельно</td><td class="is-us">Автоматизированные проверки + контроль человека</td></tr>
+          <tr><th>Расходы</th><td>Зарплаты и инфраструктура</td><td>ИИ-модели и личное время</td><td class="is-us">50 000 ₽ + модели и оборудование</td></tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
+    <p class="note" style="margin-top:var(--space-2)">Результат зависит от сложности проекта; мы не обещаем полную замену команды или фиксированный процент экономии.</p>
 
-<section id="vhodit">
-  <div class="wrap">
-    <p class="sec-label">Что входит</p>
-    <h2>50 000 ₽. Собственная инфраструктура ИИ-разработки.</h2>
-    <p class="sec-lead">Один платёж. Без ежемесячной подписки на сам продукт.</p>
-
-    <div class="kit">
-      <div class="kit__col">
-      <h3 class="kit__title">Входит в комплект</h3>
-      <ul class="kit__in">
-        <li>Исходный код инфраструктуры целиком</li>
-        <li>Доступ к закрытому репозиторию на твой логин GitHub</li>
-        <li>Система контуров с ролями: разработка, офис, маркетинг, администрирование</li>
-        <li>Координация задач: таск-борд, индекс решений, детектор дублей</li>
-        <li>Встроенные проверки: самопроверка разворачивания и 60 автоматических тестов на права владельца</li>
-        <li>Управление через Telegram: <code>/status</code>, <code>/restart</code>, <code>/model</code>, <code>/effort</code>, <code>/config</code></li>
-        <li>Инструменты развёртывания: подъём контура, сторожа каналов, автозапуск</li>
-        <li>Генератор проектов: одна команда разворачивает новый проект, есть сухой прогон</li>
-        <li>PDF-инструкция на 49 страниц</li>
-        <li>Обновления версии 1.x в течение года</li>
-      </ul>
+    <div class="boxes">
+      <div class="box">
+        <h3>Область применения</h3>
+        <ul>
+          <li>Ты уже работаешь с Claude Code или похожим инструментом и устал быть оператором</li>
+          <li>Создаёшь собственный IT-продукт</li>
+          <li>Основатель стартапа без большой команды разработки</li>
+          <li>Небольшая команда, которая хочет автоматизировать часть разработки</li>
+        </ul>
       </div>
-      <div class="kit__col">
-      <h3 class="kit__title">Не входит в стоимость</h3>
-      <ul class="kit__out">
-        <li>Подписки и доступ к ИИ-моделям</li>
-        <li>Компьютер, на котором всё это живёт</li>
-        <li>Сторонние платные сервисы</li>
-        <li>Индивидуальная разработка под твой проект</li>
-      </ul>
+      <div class="box box--warn">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Ограничения</h3>
+        <ul>
+          <li>Не полная автономность: решения и контроль остаются за человеком</li>
+          <li>Не установка в один клик: систему разворачиваешь сам по инструкции</li>
+          <li>Не замена команды: насколько снизится потребность в найме, зависит от проекта</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЛИСТ 6 -->
+<section class="sheet" id="vvod">
+  <div class="wrap">
+    <p class="sheet__head"><span>Лист 6 / 9 · ввод в эксплуатацию</span><span>четыре шага</span></p>
+    <h2 style="margin-bottom:var(--space-5)">Один раз настраиваешь. Дальше управляешь результатом.</h2>
+
+    <div class="steps">
+      <article class="step"><p class="step__n">01</p><h3>Получаешь инфраструктуру</h3><p>Доступ к закрытому репозиторию GitHub, исходному коду и инструкции.</p></article>
+      <article class="step"><p class="step__n">02</p><h3>Разворачиваешь систему</h3><p>Настраиваешь окружение, подключаешь инструменты, ИИ-модели и Telegram.</p></article>
+      <article class="step"><p class="step__n">03</p><h3>Подключаешь проект</h3><p>Инфраструктура начинает работать с кодом и задачами твоего проекта.</p></article>
+      <article class="step step--last"><p class="step__n">04</p><h3>Управляешь разработкой</h3><p>Ставишь задачи, получаешь отчёты, принимаешь решения.</p></article>
+    </div>
+
+    <div class="req">
+      <table>
+        <caption>Технические требования</caption>
+        <tbody>
+          <tr><td>1</td><td>Оборудование для работы системы — за счёт покупателя</td></tr>
+          <tr><td>2</td><td>Доступ к ИИ-моделям — оплачивается отдельно</td></tr>
+          <tr><td>3</td><td>Аккаунт GitHub — туда передаётся код</td></tr>
+          <tr><td>4</td><td>Telegram — через него идёт управление</td></tr>
+        </tbody>
+      </table>
+      <div class="warnbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        <p><b>Установка не в один клик</b>Систему разворачиваешь сам по инструкции на 49 страниц: окружение, инструменты, ИИ-модели и Telegram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЛИСТ 7 -->
+<section class="sheet sheet--soft" id="besplatno">
+  <div class="wrap">
+    <p class="sheet__head"><span>Лист 7 / 9 · бесплатный метод</span><span>первый шаг</span></p>
+    <div class="free">
+      <div>
+        <h2>Начни с бесплатного метода</h2>
+        <ul class="free__list" style="margin-top:var(--space-4)">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/></svg>Свод правил работы с ИИ в одном файле</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Кладётся в корень проекта</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Скачивается сразу — без формы и почты</li>
+        </ul>
+        <a class="btn btn--ghost" href="metod.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Скачать бесплатный метод</a>
+      </div>
+      <div>
+        <table class="kit">
+          <thead><tr><th>Состав</th><th>Бесплатно</th></tr></thead>
+          <tbody>
+            <tr class="is-on"><td>Свод правил работы с ИИ</td><td>есть</td></tr>
+            <tr class="is-off"><td>Агенты, контуры, проверки</td><td>нет</td></tr>
+            <tr class="is-off"><td>Telegram-бот</td><td>нет</td></tr>
+            <tr class="is-off"><td>Генератор проектов</td><td>нет</td></tr>
+          </tbody>
+        </table>
+        <p class="note" style="margin-top:var(--space-2)">Честно: самой инфраструктуры в файле нет. Это метод, с которого удобно начать.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЛИСТ 8 -->
+<section class="sheet sheet--plate" id="dokazano">
+  <div class="wrap">
+    <p class="sheet__head"><span>Лист 8 / 9 · чем доказано</span><span>изделие в эксплуатации</span></p>
+    <div class="proof">
+      <div>
+        <h2>Этой инфраструктурой уже собран живой продукт.</h2>
+        <p class="lead" style="margin-top:var(--space-3)">Так собран <b>Физкульт&nbsp;AI</b> — ИИ-тренер в Telegram: человек подключает свои часы, бот разбирает тренировки и отвечает на вопросы про нагрузку. Его построил один человек — без найма программистов. Не демо и не прототип: продукт работает и продаётся.</p>
+        <div class="marks">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <b>Один человек</b><span>без найма программистов</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            <b>Работает в проде</b><span>с реальными пользователями</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            <b>Продаётся по подписке</b><span>как обычный продукт</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <dl class="status"><dt>Статус изделия</dt><dd>В эксплуатации</dd></dl>
+        <div class="nothing">
+          <b>Чего здесь нет</b>
+          <p>Данных пользователей, их переписки и имён.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЛИСТ 9 -->
+<section class="sheet" id="komplekt">
+  <div class="wrap">
+    <p class="sheet__head"><span>Лист 9 / 9 · комплект, цена и вопросы</span><span>спецификация</span></p>
+    <h2 style="margin-bottom:var(--space-5)">Собственная инфраструктура ИИ-разработки</h2>
+
+    <div class="spec">
+      <table>
+        <thead><tr><th>Поз.</th><th>Наименование</th><th>Кол.</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Доступ к закрытому репозиторию GitHub</td><td>1</td></tr>
+          <tr><td>2</td><td>Полный исходный код</td><td>1</td></tr>
+          <tr><td>3</td><td>Инструкция по развёртыванию</td><td>49 стр.</td></tr>
+          <tr><td>4</td><td>Обновления</td><td>12 мес.</td></tr>
+          <tr><td>5</td><td>Контуры</td><td>4</td></tr>
+          <tr><td>6</td><td>Telegram-бот</td><td>1</td></tr>
+          <tr><td>7</td><td>Автоматические проверки</td><td>в составе</td></tr>
+          <tr><td>8</td><td>Генератор проектов</td><td>1</td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">ИИ-модели и оборудование — за счёт покупателя</td>
+            <td><span class="stamp" role="img" aria-label="Отметка ОТК: комплект проверен">
+              <svg viewBox="0 0 88 88" aria-hidden="true"><g transform="rotate(12 44 44)"><circle cx="44" cy="44" r="42" fill="none" stroke="currentColor" stroke-width="2"/><text x="44" y="49" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" letter-spacing="1" fill="currentColor">ОТК</text></g></svg>
+            </span></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="price">
+        <p class="price__label">Стоимость комплекта</p>
+        <p class="price__sum">50 000 ₽</p>
+        <p>Разово. Без подписки на продукт. Код остаётся у тебя.</p>
+        <a class="btn btn--accent" href="oplata.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          Пуск · Получить инфраструктуру</a>
+        <div class="price__how">
+          <b>Оплата идёт через разговор, а не через кнопку.</b>
+          <p>Кнопка открывает личный Telegram владельца: обсуждаем твой проект, затем оплата и доступ к репозиторию.</p>
+        </div>
       </div>
     </div>
 
-    <div class="btns">
-      <a class="btn btn--accent" href="oplata.html">Получить инфраструктуру за 50 000 ₽</a>
-      <a class="btn" href="sostav.html">Посмотреть состав подробно</a>
+    <div class="faq">
+      <h2>Вопросы до покупки</h2>
+      <div class="faq__list">
+        <details open>
+          <summary>За что именно я плачу 50 000 ₽?</summary>
+          <p>За готовую инфраструктуру: закрытый репозиторий, полный исходный код на твоём GitHub, инструкцию и обновления на 12 месяцев. Один платёж, без подписки.</p>
+        </details>
+        <details>
+          <summary>Какие ещё будут расходы?</summary>
+          <p>ИИ-модели и оборудование — за счёт покупателя. Их размер зависит от объёма задач.</p>
+        </details>
+        <details>
+          <summary>Насколько сложно установить?</summary>
+          <p>Не в один клик: систему разворачиваешь сам по инструкции на 49 страниц — окружение, инструменты, ИИ-модели и Telegram.</p>
+        </details>
+        <details>
+          <summary>Чем это лучше, чем просто Claude Code?</summary>
+          <p>Claude Code — один исполнитель, которым ты управляешь вручную. aibolno организует работу нескольких агентов: планирование, разработку, проверку и исправления, а тебе приходит отчёт.</p>
+        </details>
+        <details>
+          <summary>Это полностью заменит разработчиков?</summary>
+          <p>Не обещаем. Часть задач выполняется без твоего участия, но решения и контроль остаются за человеком.</p>
+        </details>
+        <details>
+          <summary>Что если я не готов решать сейчас?</summary>
+          <p>Напиши и спроси — <a href="https://t.me/Eldar_tri">t.me/Eldar_tri</a>. Или забери бесплатный метод и попробуй его на той работе, которая у тебя уже есть.</p>
+        </details>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="besplatno" class="band-soft">
+<section class="final">
   <div class="wrap">
-    <p class="sec-label">Первый шаг</p>
-    <h2>Начни бесплатно. Научи ИИ работать по&nbsp;правилам.</h2>
-    <p class="sec-lead">Прежде чем строить полноценную инфраструктуру, попробуй первый шаг — метод организации ИИ-разработки. Готовый файл кладёшь в свой проект: он задаёт правила работы, проверку результата и приёмку задач. Это не система агентов, а её методологическая основа. Проверяется за вечер на той работе, которая у тебя уже есть.</p>
+    <h2>Пусть ИИ работает на тебя. А ты — на свой бизнес.</h2>
     <div class="btns">
-      <a class="btn btn--accent" href="metod.html">Скачать бесплатный метод</a>
+      <a class="btn btn--accent" href="oplata.html">Получить инфраструктуру — 50&nbsp;000&nbsp;₽</a>
     </div>
-    <p class="note">Хочешь, чтобы ИИ не только следовал правилам, но и сам организовывал работу нескольких агентов? <a href="#vhodit">Посмотри полную инфраструктуру</a>.</p>
-  </div>
-</section>
-
-<section id="trebovaniya">
-  <div class="wrap">
-    <p class="sec-label">Честно</p>
-    <h2>Что важно знать перед покупкой</h2>
-    <div class="req-box">
-      <p class="req">Нужен Mac, который может оставаться включённым, пока система работает. Claude&nbsp;Code и оплаченный доступ к моделям. Telegram и GitHub.</p>
-      <p class="req req--note">Для установки могут понадобиться <code>gh</code>, <code>tmux</code>, <code>bun</code>, <code>python3</code>. Проверяются одной строкой — она первым делом в инструкции.</p>
-    </div>
-    <div class="grid">
-      <article class="card"><p><b>Требуется первоначальная настройка.</b> Вечер внимательной работы, а не кнопка «установить».</p></article>
-      <article class="card"><p><b>ИИ ошибается.</b> Важные изменения нужно смотреть и подписывать человеку — поэтому приёмка и подпись встроены в процесс.</p></article>
-      <article class="card"><p><b>Модели оплачиваются отдельно.</b> Живые контуры расходуют бюджет постоянно, даже когда ты ими не пользуешься.</p></article>
-      <article class="card"><p><b>Неиспользуемые контуры нужно гасить.</b> Иначе платишь за работу, которая тебе сейчас не нужна.</p></article>
-      <article class="card card--full"><p><b>Не настраивается один раз навсегда.</b> Инструменты обновляются и иногда ломают то, что работало. Сторожа существуют именно поэтому.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--light">50 000 ₽, один раз</p>
-    <h2>Больно — это когда всё на тебе.</h2>
-    <p class="sec-lead">Ты давно хотел сделать своё. Не отложить ещё на год, а собрать. Сейчас для этого нужен не отдел разработки, а инфраструктура и твоё решение. Перестань быть единственным разработчиком, тестировщиком и руководителем собственного проекта: ты создаёшь бизнес, ИИ помогает создавать продукт.</p>
-    <div class="btns">
-      <a class="btn btn--accent" href="oplata.html">Получить инфраструктуру — 50 000 ₽</a>
-      <a class="btn" href="metod.html">Начать с бесплатного метода</a>
-    </div>
-    <p class="cta__ask">Не готов решать сейчас — просто напиши и спроси: <a href="https://t.me/Eldar_tri">t.me/Eldar_tri</a></p>
+    <p class="final__fine">Один платёж · Код на твоём GitHub · Обновления 12 мес. · ИИ-модели отдельно</p>
   </div>
 </section>
 
@@ -318,9 +450,17 @@
 
 <footer>
   <div class="wrap">
-    <p class="name-note">aibolno.ru — это «ай, больно». Пишут и «айбольно», и латиницей <b>aibolno</b> — это одно и то же место.</p>
-    <nav>
-      <a href="#kak-rabotaet">Как работает</a>
+    <div class="stampline">
+      <div>
+        <span class="wordmark">aibolno</span>
+        <small>«Ай, больно»</small>
+      </div>
+      <div><dt>Изделие</dt><dd>Инфраструктура ИИ-разработки</dd></div>
+      <div><dt>Связь</dt><dd><a href="https://t.me/Eldar_tri">Telegram владельца</a></dd></div>
+      <div><dt>Лист 9</dt><dd>Листов 9</dd></div>
+    </div>
+    <nav class="footlinks">
+      <a href="#ustroystvo">Как устроено</a>
       <a href="sostav.html">Что входит</a>
       <a href="metod.html">Бесплатно</a>
       <a href="oplata.html">Купить</a>
