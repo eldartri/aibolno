@@ -303,7 +303,7 @@ code{font:400 .92em/1.4 var(--font-mono)}
 }
 .status dt{flex:1; color:var(--on-plate-2)}
 .status dd{background:var(--plate-2); color:var(--on-plate); border-left:1px solid var(--line-plate)}
-.nothing{margin-top:var(--space-2); padding:var(--space-3); background:var(--plate-2)}
+.nothing{margin-top:var(--space-2); padding:var(--space-3); background:var(--plate-2); color:var(--on-plate)}
 .nothing b{
   display:block; margin-bottom:8px; color:var(--on-plate-2);
   font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking); text-transform:uppercase;
