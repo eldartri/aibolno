@@ -141,14 +141,21 @@ main > .sheet:first-child{padding-top:var(--space-4)}
   font:400 var(--label) var(--font-mono); letter-spacing:.04em; color:var(--text-2);
 }
 
-.facts{
-  display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-3);
-  margin-top:var(--space-5); padding:var(--space-3) 0;
-  border-top:1.5px solid var(--line-strong); border-bottom:1px solid var(--line);
-}
-.facts div{display:flex; align-items:baseline; gap:10px}
-.facts b{font:600 34px/1 var(--font-display)}
-.facts span{color:var(--text-2)}
+/* ценовой якорь: с чем читатель сравнивает 9 990 ₽. Стоит в первом экране,
+   потому что возражение «дорого/зачем» приходит раньше, чем устройство. */
+.vs{margin-top:var(--space-5); padding-top:var(--space-3); border-top:1.5px solid var(--line-strong)}
+.vs__head{font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking);
+  text-transform:uppercase; color:var(--text-2)}
+.vs__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-3); margin-top:var(--space-3)}
+.vs__grid > div{padding:var(--space-3); background:var(--surface);
+  border:1px solid var(--line); border-top:3px solid var(--line)}
+.vs__grid > div.vs__ours{background:var(--highlight); border-color:var(--line); border-top-color:var(--accent)}
+.vs b{display:block; font:600 34px/1.1 var(--font-display); letter-spacing:-.01em}
+.vs span{display:block; margin-top:10px}
+.vs i{display:block; margin-top:12px; font:400 var(--label) var(--font-mono);
+  font-style:normal; letter-spacing:.04em; color:var(--text-2)}
+.vs__note{margin-top:var(--space-3); color:var(--text-2); max-width:80ch}
+.vs__note b{display:inline; font:inherit; font-weight:600; color:var(--text)}
 
 .chips{display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-1); margin-top:var(--space-4)}
 .chips__label{
@@ -514,8 +521,14 @@ footer{padding:var(--space-5) 0 var(--space-6)}
 @media (max-width:1024px){
   :root{--h1:44px/52px; --h2:32px/40px}
   .hero__grid,.split,.free,.proof,.spec,.faq,.req{grid-template-columns:minmax(0,1fr); gap:var(--space-4)}
+  /* в одну колонку схема чата длинная и отодвигает ценовой якорь далеко вниз —
+     переставляем якорь выше схемы, не трогая порядок в разметке */
+  .hero .wrap{display:flex; flex-direction:column}
+  .hero__grid{display:contents}
+  .vs{order:2; margin-top:var(--space-4)}
+  .hero__panel{order:3; margin-top:var(--space-4)}
   .flow__steps,.states,.steps{grid-template-columns:repeat(2,1fr)}
-  .facts{grid-template-columns:repeat(2,1fr)}
+  .vs__grid{grid-template-columns:repeat(2,1fr)}
   .states .win{height:auto; min-height:180px}
   .price{height:auto}
   .sheet{padding:var(--space-5) 0}
@@ -541,9 +554,9 @@ footer{padding:var(--space-5) 0 var(--space-6)}
      служебная надпись — на телефоне обычным текстом */
   .hero__fine,.final__fine{font-family:var(--font-text); font-size:13px;
     letter-spacing:0; line-height:1.5; padding-right:0}
-  .flow__steps,.states,.steps,.steps--3,.boxes,.facts,.marks,.stampline,.roles,.toc{grid-template-columns:minmax(0,1fr)}
+  .flow__steps,.states,.steps,.steps--3,.boxes,.vs__grid,.marks,.stampline,.roles,.toc{grid-template-columns:minmax(0,1fr)}
   .roles div,.toc div{border-right:0}
-  .facts{gap:var(--space-2)}
+  .vs__grid b{font-size:30px}
   .stampline div{border-right:0; border-bottom:1px solid var(--line)}
   .stampline div:last-child{border-bottom:0}
   .hero__panel{padding:var(--space-2)}
