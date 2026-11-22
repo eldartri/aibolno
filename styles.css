@@ -553,7 +553,6 @@ footer{padding:var(--space-5) 0 var(--space-6)}
   /* в шапке телефона три рамки подряд спорили друг с другом и с именем:
      «Бесплатно» становится тихой ссылкой, рамка остаётся одна — у цены */
   .top__buys{gap:14px}
-  .top__buys .btn--ghost{border-color:transparent; background:none; padding:7px 0; font-weight:500}
   .top__buys .btn--accent{padding:9px 14px}
   /* каламбур про название на телефоне съедал первый экран раньше заголовка;
      в подвале он всё равно сказан подписью «Ай, больно» */
