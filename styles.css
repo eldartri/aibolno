@@ -1323,3 +1323,13 @@ footer a:hover { color: var(--accent-bright); }
 }
 
 .kit + .btns { margin-top: 30px; }
+
+.cta__ask {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  margin: 22px auto 0;
+  max-width: 34rem;
+}
+
+.cta__ask a { color: var(--accent); }
