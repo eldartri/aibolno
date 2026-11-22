@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Купить — aibolno.ru</title>
-<meta name="description" content="50 000 ₽, один раз. Доступ к закрытому репозиторию на твой логин GitHub, инструкция в PDF, обновления 1.x в течение года.">
+<meta name="description" content="50 000 ₽, один раз. Доступ к закрытому репозиторию на твой логин GitHub, инструкция на 44 страницы, обновления 1.x в течение года. Счёт выставляется вручную — напиши в Telegram.">
 <meta name="theme-color" content="#15140f">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,9 @@
   <div class="wrap">
     <a class="wordmark" href="/"><b>ai</b>bolno.ru</a>
     <nav>
-      <a href="metod.html">Метод</a>
+      <a href="index.html#kak-rabotaet">Как работает</a>
       <a href="sostav.html">Что входит</a>
+      <a href="metod.html">Бесплатно</a>
       <a href="sostav.html#usloviya">Условия</a>
     </nav>
     <a class="btn btn--accent" href="oplata.html" aria-current="page">Купить</a>
@@ -32,9 +33,9 @@
   <div class="wrap">
     <p class="eyebrow">Один платёж, без подписки</p>
     <h1>50 000 ₽, один раз</h1>
-    <p class="lead">После оплаты: доступ к закрытому репозиторию на твой логин GitHub, инструкция в PDF, обновления 1.x в течение года.</p>
+    <p class="lead">Собственная инфраструктура ИИ-разработки: исходный код целиком, доступ к закрытому репозиторию на твой логин GitHub, инструкция на 44 страницы, обновления версии 1.x в течение года.</p>
     <div class="btns">
-      <a class="btn btn--accent" href="ЗАМЕНИТЬ-КОНТАКТОМ">Написать и получить счёт</a>
+      <a class="btn btn--accent" href="https://t.me/Eldar_tri">Написать и получить счёт</a>
       <a class="btn btn--ghost" href="sostav.html">Посмотреть состав целиком</a>
     </div>
   </div>
@@ -42,27 +43,34 @@
 
 <section>
   <div class="wrap">
-    <h2>Что происходит дальше</h2>
-    <p class="prose" style="margin-top:20px">Разворачивание занимает вечер. Открываешь папку в Claude&nbsp;Code, пишешь одну строку — дальше помощник проверяет машину, задаёт вопросы и всё собирает сам.</p>
+    <p class="sec-label">Как купить</p>
+    <h2>Оплата идёт через разговор, а не через кнопку</h2>
+    <p class="sec-lead">Платёжной системы на сайте нет намеренно. Ты пишешь в Telegram, получаешь счёт, платишь — доступ открывается на твой логин GitHub. Так продавец видит, кому открыл доступ, а ты получаешь живого человека на другом конце, а не форму.</p>
 
-    <div class="req-box" style="margin-top:30px">
-      <p class="req">Пока мы принимаем оплату вручную: напиши, и мы выставим счёт.</p>
+    <div class="grid">
+      <article class="card"><span class="num">01</span><p><b>Пишешь.</b> Кнопка ниже открывает личное сообщение в Telegram. Назови свой логин GitHub и на кого оформлять — физлицо, ИП или компанию.</p></article>
+      <article class="card"><span class="num">02</span><p><b>Получаешь счёт.</b> Выставляется вручную, обычно в тот же день.</p></article>
+      <article class="card"><span class="num">03</span><p><b>Платишь.</b> После оплаты приходит приглашение в закрытый репозиторий — на тот логин GitHub, который ты назвал.</p></article>
+      <article class="card"><span class="num">04</span><p><b>Разворачиваешь.</b> Открываешь папку в Claude&nbsp;Code и пишешь одну строку: помощник проверяет машину, задаёт вопросы и собирает всё сам. Занимает вечер.</p></article>
     </div>
+
     <div class="btns">
-      <a class="btn btn--accent" href="ЗАМЕНИТЬ-КОНТАКТОМ">Написать и получить счёт</a>
+      <a class="btn btn--accent" href="https://t.me/Eldar_tri">Написать в Telegram и получить счёт</a>
     </div>
-    <div class="todo">НЕ ПУБЛИКОВАТЬ, ПОКА НЕ ЗАКРЫТО: контакт для счёта (Д4 из ТЗ). Когда встанет касса — снять строку про ручную оплату и поставить кнопку оплаты на её место.</div>
+    <p class="note">Если Telegram не открывается — напиши туда же с компьютера: <code>t.me/Eldar_tri</code></p>
   </div>
 </section>
 
 <section class="band-soft">
   <div class="wrap">
-    <h2>Что нужно иметь до начала</h2>
+    <p class="sec-label">До начала</p>
+    <h2>Что нужно иметь</h2>
     <div class="req-box">
       <p class="req">Mac, который не выключается. Claude&nbsp;Code. Оплаченный доступ к модели с запасом на месяц. Telegram. Аккаунт GitHub.</p>
       <p class="req req--note">И четыре инструмента в терминале: <code>gh</code>, <code>tmux</code>, <code>bun</code>, <code>python3</code>. Если хоть одного нет — поставить придётся до начала. Проверяются одной строкой, она первым делом в инструкции.</p>
     </div>
     <p class="prose" style="margin-top:26px">Живые контуры расходуют платный доступ к моделям постоянно, даже когда ты ими не пользуешься. Это отдельный расход, и он на тебе. Неиспользуемые контуры надо гасить.</p>
+    <p class="prose">Покупка одна на человека или компанию, перепродажа и передача доступа третьим лицам не предусмотрены. Полные условия — <a href="sostav.html#usloviya">на странице состава</a>.</p>
   </div>
 </section>
 
@@ -73,8 +81,8 @@
     <p class="name-note">aibolno.ru — это «ай, больно». Пишут и «айбольно», и латиницей <b>aibolno</b> — это одно и то же место.</p>
     <nav>
       <a href="/">Главная</a>
-      <a href="metod.html">Метод</a>
       <a href="sostav.html">Что входит</a>
+      <a href="metod.html">Бесплатно</a>
       <a href="sostav.html#usloviya">Условия</a>
     </nav>
   </div>

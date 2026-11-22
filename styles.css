@@ -1166,3 +1166,160 @@ footer a:hover { color: var(--accent-bright); }
 
 .term__stop { color: var(--accent-bright); }
 .term__dim { color: #7d7767; }
+
+/* ——— переработка 22.11.2026 (ТЗ «своя ИИ-команда разработки») ———
+   Новые куски главной: мелкая строка под кнопками первого экрана, подписи под
+   схемами, таблица сравнения и список комплекта. Токены и ритм прежние. */
+
+.hero__fine {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--dark-ink-2);
+  margin: 18px 0 0;
+  max-width: 34rem;
+}
+
+.sec-lead--tight { margin-top: 38px; }
+
+.mockcard figcaption {
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin-top: 14px;
+}
+
+.mockcard figcaption code {
+  font-family: var(--mono);
+  font-size: 0.84em;
+  color: var(--accent);
+}
+
+/* ——— таблица сравнения ———
+   На узком экране таблица не ломается на карточки, а едет вбок: строки здесь
+   сопоставляются глазом, и разорванная на карточки она перестаёт сравнивать. */
+
+.compare {
+  margin-top: 36px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--surface);
+}
+
+.compare table {
+  width: 100%;
+  min-width: 44rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.compare th,
+.compare td {
+  text-align: left;
+  vertical-align: top;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.compare thead th {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink-3);
+  background: var(--paper);
+}
+
+.compare tbody th {
+  font-weight: 600;
+  color: var(--ink);
+  width: 12rem;
+  background: var(--paper);
+}
+
+.compare td { color: var(--ink-2); }
+
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td { border-bottom: 0; }
+
+.compare .is-us { color: var(--ink); background: var(--accent-soft); }
+.compare thead .is-us { color: var(--accent); }
+.compare tbody tr:last-child .is-us { font-weight: 600; }
+
+.compare + .compare__hint { margin-top: 12px; }
+
+.compare__hint {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  margin: 12px 0 0;
+}
+
+@media (min-width: 860px) {
+  .compare__hint { display: none; }
+}
+
+.compare__hint + .note { margin-top: 14px; }
+.compare + .note { margin-top: 16px; }
+
+/* ——— комплект: что входит и что нет ——— */
+
+.kit {
+  display: grid;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+@media (min-width: 860px) {
+  .kit { grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: start; }
+}
+
+.kit__col { min-width: 0; }
+
+.kit__title {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-3);
+  margin: 0 0 12px;
+}
+
+.kit ul {
+  margin: 0;
+  padding: 22px 24px;
+  list-style: none;
+  display: grid;
+  gap: 11px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--surface);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.kit li { position: relative; padding-left: 26px; color: var(--ink-2); }
+
+.kit li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--mono);
+  font-size: 0.9em;
+}
+
+.kit__in li::before { content: "✓"; color: var(--accent); }
+.kit__out { background: var(--paper); }
+.kit__out li::before { content: "—"; color: var(--ink-3); }
+.kit__out li { color: var(--ink-3); }
+
+.kit code {
+  font-family: var(--mono);
+  font-size: 0.84em;
+  color: var(--accent);
+}
+
+.kit + .btns { margin-top: 30px; }
