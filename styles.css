@@ -177,10 +177,6 @@ main > .sheet:first-child{padding-top:var(--space-4)}
 .win__who{display:flex; flex-direction:column; gap:2px; min-width:0}
 .win__who b{font-weight:600}
 .win__who span{font-size:13px; color:var(--on-plate-2)}
-.win__tag{
-  margin-left:auto; flex:none; padding:5px 10px; border:1px solid var(--line-plate); border-radius:6px;
-  font:400 var(--label) var(--font-mono); letter-spacing:.04em; color:var(--on-plate-2);
-}
 /* align-items:flex-start — чтобы короткая реплика не растягивалась в пустой
    прямоугольник на всю ширину окна */
 .win__body{display:flex; flex-direction:column; align-items:flex-start; gap:12px; padding:var(--space-2)}
@@ -337,6 +333,11 @@ main > .sheet:first-child{padding-top:var(--space-4)}
 .marks svg{width:24px; height:24px; color:var(--on-plate-2); margin-bottom:12px}
 .marks b{display:block; margin-bottom:6px}
 .marks span{color:var(--on-plate-2)}
+/* лист «Чем доказано» — светлый, а правила выше писались под тёмную плашку:
+   на нём --on-plate-2 даёт контраст около 2:1 и подписи не читаются */
+.sheet:not(.sheet--plate) .marks{border-top-color:var(--line)}
+.sheet:not(.sheet--plate) .marks svg,
+.sheet:not(.sheet--plate) .marks span{color:var(--text-2)}
 
 /* ---------- лист 9: спецификация, цена, вопросы ---------- */
 .spec{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--space-3); align-items:start}
@@ -402,8 +403,10 @@ main > .sheet:first-child{padding-top:var(--space-4)}
 .final__fine{margin-top:var(--space-3); font:400 var(--label) var(--font-mono); letter-spacing:.04em; color:var(--on-plate-2)}
 
 footer{padding:var(--space-5) 0 var(--space-6)}
-.stampline{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line-strong); background:var(--surface)}
-.stampline div{padding:var(--space-2); border-right:1px solid var(--line)}
+/* ячеек бывает три и четыре — делим поровну по факту, иначе на главной
+   оставалась пустая четверть */
+.stampline{display:flex; flex-wrap:wrap; border:1px solid var(--line-strong); background:var(--surface)}
+.stampline > div{flex:1 1 0; min-width:0; padding:var(--space-2); border-right:1px solid var(--line)}
 .stampline div:last-child{border-right:0}
 .stampline dt{
   font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking);
@@ -541,15 +544,13 @@ footer{padding:var(--space-5) 0 var(--space-6)}
      служебная надпись — на телефоне обычным текстом */
   .hero__fine,.final__fine{font-family:var(--font-text); font-size:13px;
     letter-spacing:0; line-height:1.5; padding-right:0}
-  .flow__steps,.states,.steps,.steps--3,.boxes,.vs__grid,.marks,.stampline,.roles,.toc{grid-template-columns:minmax(0,1fr)}
+  .flow__steps,.states,.steps,.steps--3,.boxes,.vs__grid,.marks,.roles,.toc{grid-template-columns:minmax(0,1fr)}
+  .stampline{flex-direction:column}
   .roles div,.toc div{border-right:0}
   .vs__grid b{font-size:30px}
   .stampline div{border-right:0; border-bottom:1px solid var(--line)}
   .stampline div:last-child{border-bottom:0}
   .hero__panel{padding:var(--space-2)}
-  /* на узком экране метка выдавливает имя окна в столбик — она уже сказана
-     подписью над панелью, поэтому внутри шапки её убираем */
-  .win__tag{display:none}
   /* карточки состояний стоят в столбик — равнять их по высоте больше не надо */
   .states .win{min-height:0}
   .hero .btns .btn{width:100%}
