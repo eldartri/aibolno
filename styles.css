@@ -56,6 +56,13 @@ code{font:400 .92em/1.4 var(--font-mono)}
 .top__buys{display:flex; gap:var(--space-1); align-items:center; margin-left:auto}
 .top nav + .top__buys{margin-left:0}
 
+/* ---------- пояс под шапкой: обыгрываем название ---------- */
+.pun{background:var(--highlight); border-bottom:1px solid var(--line)}
+.pun p{margin:0; padding:13px 0; font:400 15px/1.5 var(--font-text); color:var(--text-2)}
+.pun b{font-weight:600; color:var(--text)}
+.pun i{font-style:normal; font-weight:600; color:var(--accent)}
+@media (max-width:720px){ .pun p{font-size:14px; padding:11px 0} }
+
 /* ---------- кнопки ---------- */
 .btn{
   --btn-bg:transparent; --btn-fg:var(--text); --btn-line:var(--line-strong);
@@ -77,6 +84,9 @@ code{font:400 .92em/1.4 var(--font-mono)}
 
 /* ---------- лист: рамка и шапка листа ---------- */
 .sheet{padding:var(--space-6) 0}
+/* первый лист страницы начинается выше: наверху незачем держать пустоту */
+main > .sheet:first-child{padding-top:var(--space-4)}
+main > .sheet:first-child .sheet__head{margin-bottom:var(--space-4)}
 .sheet--plate{background:var(--plate); color:var(--on-plate)}
 .sheet--plate .lead,.sheet--plate .note{color:var(--on-plate-2)}
 .sheet--soft{background:var(--highlight)}
@@ -100,6 +110,45 @@ code{font:400 .92em/1.4 var(--font-mono)}
 .hero h1{margin-bottom:var(--space-3)}
 .hero .lead{margin-bottom:var(--space-4)}
 .hero .btns{flex-direction:column; align-items:flex-start; gap:var(--space-2)}
+.claim{margin-top:var(--space-3); padding:var(--space-2) var(--space-3);
+  border-left:3px solid var(--accent); background:var(--highlight);
+  font:400 var(--body) var(--font-text)}
+.claim b{font-weight:600}
+
+/* ---------- состав команды ---------- */
+.subhead{margin:var(--space-5) 0 var(--space-3)}
+.crew{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-2)}
+.crew > div{border:1px dashed var(--line-plate); padding:var(--space-2)}
+.sheet:not(.sheet--plate) .crew > div{border-color:var(--line)}
+.crew__n{font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking);
+  text-transform:uppercase; color:var(--accent); margin-bottom:10px}
+.crew b{display:block; font:600 20px/1.25 var(--font-display); margin-bottom:8px}
+.crew p:last-child{font-size:15px; line-height:1.5; color:var(--on-plate-2)}
+.sheet:not(.sheet--plate) .crew p:last-child{color:var(--text-2)}
+@media (max-width:980px){ .crew{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:620px){ .crew{grid-template-columns:1fr} }
+
+/* ---------- яркая ссылка на живой продукт ---------- */
+.plug{display:flex; align-items:center; gap:var(--space-3); margin-top:var(--space-5);
+  padding:var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+  text-decoration:none; color:var(--on-accent); background:var(--accent);
+  box-shadow:0 10px 30px rgba(201,63,22,.28); transition:transform .15s, box-shadow .15s}
+.plug:hover{transform:translateY(-2px); box-shadow:0 14px 38px rgba(201,63,22,.38)}
+.plug__mark{flex:none; font:600 34px/1 var(--font-display); letter-spacing:-.025em; white-space:nowrap}
+.plug__mark i{font-style:normal; font-weight:600; opacity:.72; margin-left:4px}
+.plug__txt{display:flex; flex-direction:column; gap:4px; font-size:15px; line-height:1.45;
+  color:var(--on-accent); opacity:.88; border-left:1px solid rgba(255,255,255,.35); padding-left:var(--space-3)}
+.plug__txt b{font-weight:600; font-size:19px; opacity:1}
+.plug__go{flex:none; display:inline-flex; align-items:center; gap:8px; margin-left:auto;
+  padding:12px 20px; background:var(--on-accent); color:var(--accent);
+  font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking); text-transform:uppercase}
+.plug__go svg{width:18px; height:18px}
+@media (max-width:760px){
+  .plug{flex-wrap:wrap; gap:var(--space-2); padding:var(--space-3)}
+  .plug__mark{font-size:28px}
+  .plug__txt{border-left:0; padding-left:0; width:100%}
+  .plug__go{margin-left:0}
+}
 .hero__fine{
   margin-top:var(--space-3); padding-right:var(--space-3);
   font:400 var(--label) var(--font-mono); letter-spacing:.04em; color:var(--text-2);
@@ -345,6 +394,19 @@ code{font:400 .92em/1.4 var(--font-mono)}
 .price .btn{width:100%; margin:var(--space-3) 0}
 .price__how{padding-top:var(--space-3); border-top:1px solid var(--line-plate)}
 .price__how b{display:block; margin-bottom:8px}
+
+.tier{display:flex; align-items:center; gap:var(--space-4); margin-top:var(--space-4);
+  padding:var(--space-3); border:1px solid var(--line-strong); background:var(--highlight)}
+.tier__n{font:500 var(--label) var(--font-mono); letter-spacing:var(--label-tracking);
+  text-transform:uppercase; color:var(--accent); margin-bottom:10px}
+.tier h3{font:600 28px/1.2 var(--font-display); letter-spacing:-.01em; margin-bottom:10px}
+.tier p:last-child{color:var(--text-2); max-width:62ch}
+.tier .btn{flex:none}
+@media (max-width:760px){
+  .tier{flex-direction:column; align-items:stretch; gap:var(--space-3)}
+  .tier h3{font-size:24px}
+  .tier .btn{justify-content:center}
+}
 
 .faq{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:var(--space-5); margin-top:var(--space-6); align-items:start}
 .faq__list{border-top:1px solid var(--line-strong)}
